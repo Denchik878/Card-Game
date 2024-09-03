@@ -1,31 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Card : MonoBehaviour
 {
-    public GameObject dragPrefab;
-    private GameObject dragObject;
-    private void OnMouseDown()
+    public int damage;
+    public int maxHealth;
+    private int currentHealth;
+    public TMP_Text HPText;
+    public void ChangeHealth(int a)
     {
-        dragObject = Instantiate(dragPrefab);
+        currentHealth += a;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+        }
     }
-    private void OnMouseUp()
+    void Start()
     {
-        Destroy(dragObject);
-    }
-    private void Update()
-    {
-        if (dragObject == null)
-            return;
-        dragObject.transform.position = GetMouseWorldPosition();
         
     }
-    private Vector3 GetMouseWorldPosition()
+
+    void Update()
     {
-        Vector3 mouseScreenPosition = Input.mousePosition;
-        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
-        mouseWorldPosition.z = 0;
-        return mouseWorldPosition;
+        
     }
 }
