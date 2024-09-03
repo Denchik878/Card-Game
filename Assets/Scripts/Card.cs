@@ -14,4 +14,18 @@ public class Card : MonoBehaviour
     {
         Destroy(dragObject);
     }
+    private void Update()
+    {
+        if (dragObject == null)
+            return;
+        dragObject.transform.position = GetMouseWorldPosition();
+        
+    }
+    private Vector3 GetMouseWorldPosition()
+    {
+        Vector3 mouseScreenPosition = Input.mousePosition;
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
+        mouseWorldPosition.z = 0;
+        return mouseWorldPosition;
+    }
 }
