@@ -20,10 +20,11 @@ public class Card : MonoBehaviour
         {
             currentHealth = 0;
         }
+        HPText.text = currentHealth.ToString();
     }
     void Start()
     {
-        
+        ChangeHealth(maxHealth);
     }
 
     void Update()

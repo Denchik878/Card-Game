@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngineInternal;
 
 public class CardMovement : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class CardMovement : MonoBehaviour
     }
     private void OnMouseUp()
     {
+        DetectCard();
         Destroy(dragObject);
     }
     private void Update()
@@ -24,5 +26,13 @@ public class CardMovement : MonoBehaviour
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
         mouseWorldPosition.z = 0;
         return mouseWorldPosition;
+    }
+    private void DetectCard()
+    {
+        RaycastHit2D hit = Physics2D.CircleCast(dragObject.transform.position, 0.1f, Vector2.up);
+        if (hit)
+        {
+            hit.collider.gameObject.GetComponent<Card>().ChangeHealth(-1);
+        }
     }
 }
