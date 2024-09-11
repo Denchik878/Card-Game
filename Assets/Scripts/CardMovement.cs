@@ -29,10 +29,10 @@ public class CardMovement : MonoBehaviour
     }
     private void DetectCard()
     {
-        RaycastHit2D hit = Physics2D.CircleCast(dragObject.transform.position, 0.1f, Vector2.up);
-        if (hit)
+        Collider2D collider = Physics2D.OverlapCircle(dragObject.transform.position, 0.1f);
+        if (collider)
         {
-            hit.collider.gameObject.GetComponent<Card>().ChangeHealth(-1);
+            collider.gameObject.GetComponent<Card>().ChangeHealth(-1);
         }
     }
 }
