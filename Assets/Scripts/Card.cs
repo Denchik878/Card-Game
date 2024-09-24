@@ -19,6 +19,7 @@ public class Card : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
+            Destroy(gameObject);
         }
         HPText.text = currentHealth.ToString();
     }
