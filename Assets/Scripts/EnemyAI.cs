@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
-
+    public List<Card> cards;
     void Update()
     {
         if (GameManager.Instance.state == GameState.EnemyTurn)
         {
-            //Что то там
+            foreach(Card card in cards)
+            {
+                card.Turn();
+            }
             GameManager.Instance.state = GameState.PlayerTurn;
         }
     }

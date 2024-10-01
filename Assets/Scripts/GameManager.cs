@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public GameState state = GameState.Pause;
+    public GameState state = GameState.PlayerTurn;
     void Awake()
     {
         DontDestroyOnLoad(gameObject);

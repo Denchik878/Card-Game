@@ -33,6 +33,10 @@ public class CardMovement : MonoBehaviour
     private void DetectCard()
     {
         Collider2D collider = Physics2D.OverlapCircle(dragObject.transform.position, 0.1f);
+        if(collider == null || collider.GetComponent<Card>())
+        {
+            return;
+        }
         if (collider)
         {
             collider.gameObject.GetComponent<Card>().ChangeHealth(-1);
