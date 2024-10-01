@@ -7,7 +7,10 @@ public class CardMovement : MonoBehaviour
     private GameObject dragObject;
     private void OnMouseDown()
     {
-        dragObject = Instantiate(dragPrefab);
+        if(GameManager.Instance.state == GameState.PlayerTurn)
+        {
+            dragObject = Instantiate(dragPrefab);
+        }
     }
     private void OnMouseUp()
     {
@@ -33,6 +36,7 @@ public class CardMovement : MonoBehaviour
         if (collider)
         {
             collider.gameObject.GetComponent<Card>().ChangeHealth(-1);
+            GameManager.Instance.state = GameState.EnemyTurn;
         }
     }
 }

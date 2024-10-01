@@ -6,7 +6,7 @@ public class CardMinion : Card
 {
     public GameObject[] elements;
     public int turnsToAttack;
-    private void Turn()
+    public override void Turn() 
     {
         if(turnsToAttack <= 1)
         {
@@ -18,11 +18,7 @@ public class CardMinion : Card
             StartCoroutine(FadeAndDestroy(elements[turnsToAttack]));
         }
     }
-    private void OnMouseDown()
-    {
-        Turn();
-    }
-    private IEnumerator FadeAndDestroy(GameObject element)
+       private IEnumerator FadeAndDestroy(GameObject element)
     {
         SpriteRenderer renderer = element.GetComponent<SpriteRenderer>();
         Color color = renderer.color;

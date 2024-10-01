@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Card : MonoBehaviour
+public abstract class Card : MonoBehaviour
 {
     public int damage;
     public int maxHealth;
     private int currentHealth;
     public TMP_Text HPText;
+    public abstract void Turn();
     public void ChangeHealth(int a)
     {
         currentHealth += a;
@@ -28,8 +29,4 @@ public class Card : MonoBehaviour
         ChangeHealth(maxHealth);
     }
 
-    void Update()
-    {
-        
-    }
 }
