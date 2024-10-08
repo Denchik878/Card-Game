@@ -11,6 +11,11 @@ public class EnemyAI : MonoBehaviour
         {
             foreach(Card card in cards)
             {
+                if(card == null)
+                {
+                    cards.Remove(card);
+                    continue;
+                }
                 card.Turn();
             }
             GameManager.Instance.state = GameState.PlayerTurn;

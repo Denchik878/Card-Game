@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngineInternal;
 
@@ -5,6 +6,12 @@ public class CardMovement : MonoBehaviour
 {
     public GameObject dragPrefab;
     private GameObject dragObject;
+    public int damage;
+    public TMP_Text damegeText;
+    private void Start()
+    {
+        damegeText.text = damage.ToString();
+    }
     private void OnMouseDown()
     {
         if(GameManager.Instance.state == GameState.PlayerTurn)
@@ -39,7 +46,7 @@ public class CardMovement : MonoBehaviour
         }
         if (collider)
         {
-            collider.gameObject.GetComponent<Card>().ChangeHealth(-1);
+            collider.gameObject.GetComponent<Card>().ChangeHealth(-damage);
             GameManager.Instance.state = GameState.EnemyTurn;
         }
     }

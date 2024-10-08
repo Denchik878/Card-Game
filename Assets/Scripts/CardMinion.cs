@@ -10,6 +10,7 @@ public class CardMinion : Card
     {
         if(turnsToAttack <= 1)
         {
+            FindObjectOfType<HerzCard>().ChangeHealth(-damage);
             Destroy(gameObject);
         }
         else

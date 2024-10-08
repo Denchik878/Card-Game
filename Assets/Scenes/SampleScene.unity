@@ -465,7 +465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 969b1553f4aba4c9390d7083f7efa8af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 3
   maxHealth: 5
   HPText: {fileID: 825275526}
   elements:
@@ -1316,6 +1316,17 @@ Transform:
   m_Father: {fileID: 392699018}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1005946621 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6223648643666814115, guid: 7abff288f66019f46853a096af229d5a, type: 3}
+  m_PrefabInstance: {fileID: 924855260730121984}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1033361169 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3592860708352182951, guid: 3aa4e4f452d2b2946a196943c4af51af, type: 3}
@@ -1830,7 +1841,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5229332580041227260, guid: be2657194e77d3f44afbcab86f2d5aaa, type: 3}
       propertyPath: m_Name
-      value: Card front8
+      value: Herz
       objectReference: {fileID: 0}
     - target: {fileID: 8087694594754018774, guid: be2657194e77d3f44afbcab86f2d5aaa, type: 3}
       propertyPath: m_RootOrder
@@ -2017,6 +2028,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 924855260551946030, guid: 7abff288f66019f46853a096af229d5a, type: 3}
+      propertyPath: damage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 924855260551946030, guid: 7abff288f66019f46853a096af229d5a, type: 3}
+      propertyPath: damegeText
+      value: 
+      objectReference: {fileID: 1005946621}
     - target: {fileID: 2117427067738703982, guid: 7abff288f66019f46853a096af229d5a, type: 3}
       propertyPath: m_SortingOrder
       value: 5
