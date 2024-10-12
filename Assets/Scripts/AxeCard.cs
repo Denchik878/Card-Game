@@ -1,17 +1,18 @@
-using TMPro;
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngineInternal;
 
-public class CardMovement : MonoBehaviour
+public class AxeCard : Card
 {
+    private int attacksLeft;
+    public GameObject[] elemets;
+    public override void Turn()
+    {
+        
+    }
     public GameObject dragPrefab;
     private GameObject dragObject;
-    public int damage;
-    public TMP_Text damegeText;
-    private void Start()
-    {
-        damegeText.text = damage.ToString();
-    }
     private void OnMouseDown()
     {
         if(GameManager.Instance.state == GameState.PlayerTurn)
@@ -50,4 +51,18 @@ public class CardMovement : MonoBehaviour
             GameManager.Instance.state = GameState.EnemyTurn;
         }
     }
+    private IEnumerator FadeAndDestroy(GameObject element)
+    {
+        SpriteRenderer renderer = element.GetComponent<SpriteRenderer>();
+        Color color = renderer.color;
+        float alpha = color.a;
+        while(alpha > 0)
+        {
+            yield return null;
+            alpha -= Time.deltaTime;
+            color.a = alpha;
+            renderer.color = color;
+        }
+        Destroy(element);
+    } 
 }

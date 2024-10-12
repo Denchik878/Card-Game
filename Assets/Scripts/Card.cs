@@ -9,6 +9,8 @@ public abstract class Card : MonoBehaviour
     public int maxHealth;
     private int currentHealth;
     public TMP_Text HPText;
+    public TMP_Text damageText;
+    public bool isEnemy;
     public abstract void Turn();
     public void ChangeHealth(int a)
     {
@@ -26,7 +28,16 @@ public abstract class Card : MonoBehaviour
     }
     void Start()
     {
-        ChangeHealth(maxHealth);
+        if (damageText != null)
+        {
+            damageText.text = damage.ToString();
+        }
+        if (HPText != null)
+        {
+            ChangeHealth(maxHealth);
+        }
+        
+        
     }
 
 }

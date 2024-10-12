@@ -19,7 +19,7 @@ public class CardMinion : Card
             StartCoroutine(FadeAndDestroy(elements[turnsToAttack]));
         }
     }
-       private IEnumerator FadeAndDestroy(GameObject element)
+    private IEnumerator FadeAndDestroy(GameObject element)
     {
         SpriteRenderer renderer = element.GetComponent<SpriteRenderer>();
         Color color = renderer.color;
