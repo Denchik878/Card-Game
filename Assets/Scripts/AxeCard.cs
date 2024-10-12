@@ -7,10 +7,20 @@ public class AxeCard : Card
 {
     private int attacksLeft;
     public GameObject[] elemets;
+    private void Start()
+    {
+        attacksLeft = elemets.Length;
+    }
     public override void Turn()
     {
-        
-    }
+        attacksLeft--;
+        if (attacksLeft == 0)
+        {
+            Destroy(gameObject);
+        }
+        StartCoroutine(FadeAndDestroy(elemets[attacksLeft]));
+        GameManager.Instance.state = GameState.EnemyTurn;
+    }    
     public GameObject dragPrefab;
     private GameObject dragObject;
     private void OnMouseDown()
@@ -46,9 +56,9 @@ public class AxeCard : Card
             return;
         }
         if (collider)
-        {
-            collider.gameObject.GetComponent<Card>().ChangeHealth(-damage);
-            GameManager.Instance.state = GameState.EnemyTurn;
+        {            
+            collider.gameObject.GetComponent<Card>().ChangeHealth(-damage);    
+            Turn();            
         }
     }
     private IEnumerator FadeAndDestroy(GameObject element)
