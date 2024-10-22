@@ -9,6 +9,7 @@ public class AxeCard : Card
     public GameObject[] elemets;
     private void Start()
     {
+        base.Start();
         attacksLeft = elemets.Length;
     }
     public override void Turn()
@@ -51,14 +52,17 @@ public class AxeCard : Card
     private void DetectCard()
     {
         Collider2D collider = Physics2D.OverlapCircle(dragObject.transform.position, 0.1f);
-        if(collider == null || collider.GetComponent<Card>() == null)
+        if (!collider)
+            return;
+        Card buffer = collider.GetComponent<Card>();
+        if(buffer == null)
         {
             return;
         }
-        if (collider)
-        {            
-            collider.gameObject.GetComponent<Card>().ChangeHealth(-damage);    
-            Turn();            
+        if (buffer.isEnemy)
+        {
+            buffer.ChangeHealth(-damage);
+            Turn();
         }
     }
     private IEnumerator FadeAndDestroy(GameObject element)

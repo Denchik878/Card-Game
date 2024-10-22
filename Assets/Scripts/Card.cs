@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -11,7 +10,8 @@ public abstract class Card : MonoBehaviour
     public TMP_Text HPText;
     public TMP_Text damageText;
     public bool isEnemy;
-    void Start()
+    public event Action<Card> OnDeath;
+    protected void Start()
     {
         if (damageText != null)
         {
@@ -32,7 +32,7 @@ public abstract class Card : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            Destroy(gameObject);
+            OnDeath?.Invoke(this);
         }
         HPText.text = currentHealth.ToString();
     }
