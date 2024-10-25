@@ -774,6 +774,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 428147821}
+  - component: {fileID: 428147822}
   m_Layer: 0
   m_Name: Spawer
   m_TagString: Untagged
@@ -803,6 +804,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &428147822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428147820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0a721eb6fc3b449915e493637355a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 4088340150552258671, guid: af60ea64b9f0db94dbe7b5c645a61e13, type: 3}
+  spawnPoints:
+  - {fileID: 1984072370}
+  - {fileID: 748216334}
+  - {fileID: 603539232}
+  - {fileID: 1013791975}
+  - {fileID: 234553168}
+  - {fileID: 444775820}
+  - {fileID: 200449853}
 --- !u!1 &444775820
 GameObject:
   m_ObjectHideFlags: 0

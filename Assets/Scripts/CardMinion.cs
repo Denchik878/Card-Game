@@ -12,7 +12,7 @@ public class CardMinion : Card
         if(turnsToAttack <= 1)
         {
             FindObjectOfType<HerzCard>().ChangeHealth(-damage);
-            Destroy(gameObject);
+            Destroy(gameObject);//Будет баг
         }
         else
         {
