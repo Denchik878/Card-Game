@@ -5,10 +5,20 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public Card[] prefabs;
-    public GameObject[] spawnPoints;
+    public Point[] points;
 
-    public Card Spawn()
+    public List<Card> Spawn()
     {
-        return prefabs[Random.Range(0, prefabs.Length)];
+        List<Card> cards = new();
+        foreach(Point point in points)
+        {
+            if (point.currentCard != null)
+                continue;
+            int random = Random.Range(0, prefabs.Length);
+            Card card = Instantiate(prefabs[random], point.transform.position, Quaternion.identity);
+            point.currentCard = card;
+            cards.Add(card);
+        }
+        return cards;
     }
 }

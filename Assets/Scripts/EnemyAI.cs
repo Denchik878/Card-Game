@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+    public Spawner spawner;
     public List<Card> cards;
     void Update()
     {
@@ -20,6 +21,12 @@ public class EnemyAI : MonoBehaviour
                 }
                 card.Turn();
             }
+            var newCards = spawner.Spawn();
+            foreach(Card card in newCards)
+            {
+                card.OnDeath += DisposeCard;
+            }
+            cards.AddRange(newCards);
             GameManager.Instance.state = GameState.PlayerTurn;
         }
     }
