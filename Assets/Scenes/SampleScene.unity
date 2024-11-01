@@ -287,7 +287,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 4088340150552258671, guid: af60ea64b9f0db94dbe7b5c645a61e13, type: 3}
   - {fileID: 4088340150552258671, guid: 96c48ee85c29a43f2a7130d1e4373cd3, type: 3}
-  - {fileID: 924855260730121986, guid: 7abff288f66019f46853a096af229d5a, type: 3}
+  - {fileID: 2705947517820227152, guid: 7c938a494cc51487cb9155dc131bdc59, type: 3}
   points:
   - {fileID: 1984072372}
   - {fileID: 748216336}
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 444775821}
   - component: {fileID: 444775822}
   m_Layer: 0
-  m_Name: Point (5)
+  m_Name: Point Left
   m_TagString: Untagged
   m_Icon: {fileID: 2800000, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
   m_NavMeshLayer: 0
@@ -577,7 +577,7 @@ GameObject:
   - component: {fileID: 748216335}
   - component: {fileID: 748216336}
   m_Layer: 0
-  m_Name: Point (1)
+  m_Name: Point Right
   m_TagString: Untagged
   m_Icon: {fileID: 2800000, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
   m_NavMeshLayer: 0
@@ -789,7 +789,7 @@ GameObject:
   - component: {fileID: 1984072371}
   - component: {fileID: 1984072372}
   m_Layer: 0
-  m_Name: Point
+  m_Name: Point Middle
   m_TagString: Untagged
   m_Icon: {fileID: 2800000, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
   m_NavMeshLayer: 0
