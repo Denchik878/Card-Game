@@ -6,11 +6,12 @@ public class Weapon : Card
 {
     public GameObject[] elements;
     public int turnsToAttack;
+    public Card weaponPrefab;
     public override void Turn()
     {
         if (turnsToAttack <= 1)
         {
-            Destroy(gameObject);//Будет баг
+            Destroy(gameObject);
         }
         else
         {
@@ -34,6 +35,8 @@ public class Weapon : Card
     }
     private void OnMouseDown()
     {
+        FindObjectOfType<Player>().CreateWeapon(weaponPrefab);
+        GameManager.Instance.state = GameState.EnemyTurn;
         Destroy(gameObject);
     }
 }

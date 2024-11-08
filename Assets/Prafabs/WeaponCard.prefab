@@ -258,6 +258,7 @@ MonoBehaviour:
   - {fileID: 924855262074364355}
   - {fileID: 924855261063470604}
   turnsToAttack: 3
+  weaponPrefab: {fileID: 924855260730121986, guid: 7abff288f66019f46853a096af229d5a, type: 3}
 --- !u!1 &924855261017647581
 GameObject:
   m_ObjectHideFlags: 0
