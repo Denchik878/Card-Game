@@ -38,4 +38,8 @@ public abstract class Card : MonoBehaviour
     }
     public abstract void Turn();
 
+    protected void DestroySelf()
+    {
+        OnDeath?.Invoke(this);
+    }
 }

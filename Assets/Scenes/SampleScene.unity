@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  maxHealth: 20
+  maxHealth: 30
   HPText: {fileID: 1033361169}
   damageText: {fileID: 0}
   isEnemy: 1
@@ -881,6 +881,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Herz
       objectReference: {fileID: 0}
+    - target: {fileID: 5770932227703948702, guid: be2657194e77d3f44afbcab86f2d5aaa, type: 3}
+      propertyPath: dragPrefab
+      value: 
+      objectReference: {fileID: 8120054307815012329, guid: e3d9be1a8b1fbeb4ea4a023ad0edce3f, type: 3}
     - target: {fileID: 8087694594754018774, guid: be2657194e77d3f44afbcab86f2d5aaa, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1075,6 +1079,12 @@ PrefabInstance:
     - target: {fileID: 3592860707516879795, guid: 3aa4e4f452d2b2946a196943c4af51af, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278206719
+      objectReference: {fileID: 0}
+    - target: {fileID: 3592860708352182951, guid: 3aa4e4f452d2b2946a196943c4af51af, type: 3}
+      propertyPath: m_text
+      value: '30
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3592860708536601860, guid: 3aa4e4f452d2b2946a196943c4af51af, type: 3}
       propertyPath: m_RootOrder

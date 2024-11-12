@@ -11,7 +11,7 @@ public class Weapon : Card
     {
         if (turnsToAttack <= 1)
         {
-            Destroy(gameObject);
+            DestroySelf();
         }
         else
         {
@@ -37,6 +37,6 @@ public class Weapon : Card
     {
         FindObjectOfType<Player>().CreateWeapon(weaponPrefab);
         GameManager.Instance.state = GameState.EnemyTurn;
-        Destroy(gameObject);
+        DestroySelf();
     }
 }

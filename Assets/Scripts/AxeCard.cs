@@ -7,6 +7,8 @@ public class AxeCard : Card
 {
     private int attacksLeft;
     public GameObject[] elemets;
+    public GameObject dragPrefab;
+    private GameObject dragObject;
     private void Start()
     {
         base.Start();
@@ -17,13 +19,11 @@ public class AxeCard : Card
         attacksLeft--;
         if (attacksLeft == 0)
         {
-            Destroy(gameObject);
+            DestroySelf();
         }
         StartCoroutine(FadeAndDestroy(elemets[attacksLeft]));
         GameManager.Instance.state = GameState.EnemyTurn;
     }    
-    public GameObject dragPrefab;
-    private GameObject dragObject;
     private void OnMouseDown()
     {
         if(GameManager.Instance.state == GameState.PlayerTurn)
