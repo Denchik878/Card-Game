@@ -7,7 +7,7 @@ public class CardMinion : Card
 {
     public GameObject[] elements;
     public int turnsToAttack;
-    public override void Turn() 
+    public override async Awaitable Turn() 
     {
         if(turnsToAttack <= 1)
         {

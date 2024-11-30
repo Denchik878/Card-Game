@@ -20,5 +20,7 @@ public enum GameState
 {
     EnemyTurn,
     PlayerTurn,
+    EnemyAnimaton,
+    PlayerAnimation,
     Pause,
 }

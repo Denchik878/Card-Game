@@ -14,12 +14,12 @@ public class AxeCard : Card
         base.Start();
         attacksLeft = elemets.Length;
     }
-    public override void Turn()
+    public override async Awaitable Turn()
     {
         attacksLeft--;
         if (attacksLeft == 0)
         {
-            DestroySelf();
+            Destroy(gameObject);
         }
         StartCoroutine(FadeAndDestroy(elemets[attacksLeft]));
         GameManager.Instance.state = GameState.EnemyTurn;

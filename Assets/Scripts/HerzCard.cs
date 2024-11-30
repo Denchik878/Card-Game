@@ -6,7 +6,7 @@ public class HerzCard : Card
 {
     public GameObject dragPrefab;
     private GameObject dragObject;
-    public override void Turn()
+    public override async Awaitable Turn()
     {
         GameManager.Instance.state = GameState.EnemyTurn;
     }

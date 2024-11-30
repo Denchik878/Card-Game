@@ -36,7 +36,7 @@ public abstract class Card : MonoBehaviour
         }
         HPText.text = currentHealth.ToString();
     }
-    public abstract void Turn();
+    public abstract Awaitable Turn();
 
     protected void DestroySelf()
     {

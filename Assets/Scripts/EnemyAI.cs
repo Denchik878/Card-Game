@@ -8,18 +8,19 @@ public class EnemyAI : MonoBehaviour
 {
     public Spawner spawner;
     public List<Card> cards;
-    void Update()
+    async void Update()
     {
         if (GameManager.Instance.state == GameState.EnemyTurn)
         {
-            foreach(Card card in cards)
+            GameManager.Instance.state = GameState.EnemyAnimaton;
+            foreach (Card card in cards)
             {
                 if(card == null)
                 {
                     cards.Remove(card);
                     continue;
                 }
-                card.Turn();
+                await card.Turn();
             }
             var newCards = spawner.Spawn();
             foreach(Card card in newCards)
