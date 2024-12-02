@@ -8,11 +8,11 @@ public class HerzCard : Card
     private GameObject dragObject;
     public override async Awaitable Turn()
     {
-        GameManager.Instance.state = GameState.EnemyTurn;
+        GameManager.Instance.ChangeState(GameState.EnemyTurn);
     }
     private void OnMouseDown()
     {
-        if (GameManager.Instance.state == GameState.PlayerTurn)
+        if (GameManager.Instance.State == GameState.PlayerTurn)
         {
             dragObject = Instantiate(dragPrefab);
         }

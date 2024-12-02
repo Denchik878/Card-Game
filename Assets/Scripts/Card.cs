@@ -38,8 +38,24 @@ public abstract class Card : MonoBehaviour
     }
     public abstract Awaitable Turn();
 
-    protected void DestroySelf()
+    protected async Awaitable DestroySelf()
     {
+        await Awaitable.NextFrameAsync();
         OnDeath?.Invoke(this);
+    }
+
+    protected async Awaitable FadeAndDestroy(GameObject element)
+    {
+        SpriteRenderer renderer = element.GetComponent<SpriteRenderer>();
+        Color color = renderer.color;
+        float alpha = color.a;
+        while(alpha > 0)
+        {
+            await Awaitable.NextFrameAsync();
+            alpha -= Time.deltaTime;
+            color.a = alpha;
+            renderer.color = color;
+        }
+        Destroy(element);
     }
 }

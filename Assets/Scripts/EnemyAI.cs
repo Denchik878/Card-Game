@@ -3,38 +3,41 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class EnemyAI : MonoBehaviour
 {
     public Spawner spawner;
-    public List<Card> cards;
+    public List<Card> activeCards = new();
+    private List<Card> disposeCards = new();
     async void Update()
     {
-        if (GameManager.Instance.state == GameState.EnemyTurn)
+        if (GameManager.Instance.State == GameState.EnemyTurn)
         {
-            GameManager.Instance.state = GameState.EnemyAnimaton;
-            foreach (Card card in cards)
+            GameManager.Instance.ChangeState(GameState.EnemyAnimaton);
+            foreach (Card card in activeCards)
             {
-                if(card == null)
-                {
-                    cards.Remove(card);
-                    continue;
-                }
                 await card.Turn();
             }
+            activeCards.RemoveAll(card => disposeCards.Contains(card));
+            foreach (Card card in disposeCards)
+            {
+                Destroy(card.gameObject);
+            }
+            disposeCards.Clear();
             var newCards = spawner.Spawn();
             foreach(Card card in newCards)
             {
                 card.OnDeath += DisposeCard;
             }
-            cards.AddRange(newCards);
-            GameManager.Instance.state = GameState.PlayerTurn;
+            activeCards.AddRange(newCards);
+            GameManager.Instance.ChangeState(GameState.PlayerTurn);
         }
     }
 
     private void OnEnable()
     {
-        foreach (Card card in cards)
+        foreach (Card card in activeCards)
         {
             card.OnDeath += DisposeCard;
         }
@@ -42,7 +45,7 @@ public class EnemyAI : MonoBehaviour
 
     private void OnDisable()
     {
-        foreach (var card in cards)
+        foreach (var card in activeCards)
         {
             card.OnDeath -= DisposeCard;
         }
@@ -50,9 +53,8 @@ public class EnemyAI : MonoBehaviour
 
     public void DisposeCard(Card disposableCard)
     {
-        cards.Remove(disposableCard);
+        disposeCards.Add(disposableCard);
         disposableCard.OnDeath -= DisposeCard;
-        Destroy(disposableCard.gameObject);
     }
 }
 

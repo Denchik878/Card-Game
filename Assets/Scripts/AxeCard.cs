@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class AxeCard : Card
@@ -19,15 +16,16 @@ public class AxeCard : Card
         attacksLeft--;
         if (attacksLeft == 0)
         {
-            Destroy(gameObject);
+            DestroySelf();
         }
-        StartCoroutine(FadeAndDestroy(elemets[attacksLeft]));
-        GameManager.Instance.state = GameState.EnemyTurn;
+        await FadeAndDestroy(elemets[attacksLeft]);
+        GameManager.Instance.ChangeState(GameState.EnemyTurn);
     }    
     private void OnMouseDown()
     {
-        if(GameManager.Instance.state == GameState.PlayerTurn)
+        if(GameManager.Instance.State == GameState.PlayerTurn)
         {
+            GameManager.Instance.ChangeState(GameState.PlayerAnimation);
             dragObject = Instantiate(dragPrefab);
         }
     }
@@ -51,12 +49,16 @@ public class AxeCard : Card
     }
     private void DetectCard()
     {
-        Collider2D collider = Physics2D.OverlapCircle(dragObject.transform.position, 0.1f);
+        Collider2D collider = Physics2D.OverlapPoint(dragObject.transform.position);
         if (!collider)
+        {
+            GameManager.Instance.ChangeState(GameState.PlayerTurn);
             return;
+        }
         Card buffer = collider.GetComponent<Card>();
         if(buffer == null)
         {
+            GameManager.Instance.ChangeState(GameState.PlayerTurn);
             return;
         }
         if (buffer.isEnemy)
@@ -64,19 +66,9 @@ public class AxeCard : Card
             buffer.ChangeHealth(-damage);
             Turn();
         }
-    }
-    private IEnumerator FadeAndDestroy(GameObject element)
-    {
-        SpriteRenderer renderer = element.GetComponent<SpriteRenderer>();
-        Color color = renderer.color;
-        float alpha = color.a;
-        while(alpha > 0)
+        else
         {
-            yield return null;
-            alpha -= Time.deltaTime;
-            color.a = alpha;
-            renderer.color = color;
+            GameManager.Instance.ChangeState(GameState.PlayerTurn);
         }
-        Destroy(element);
-    } 
+    }
 }

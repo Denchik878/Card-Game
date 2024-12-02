@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CardMinion : Card
@@ -11,28 +8,14 @@ public class CardMinion : Card
     {
         if(turnsToAttack <= 1)
         {
-            FindObjectOfType<HerzCard>().ChangeHealth(-damage);
-            DestroySelf();
+            FindAnyObjectByType<HerzCard>().ChangeHealth(-damage);
+            await DestroySelf();
         }
         else
         {
             turnsToAttack--;
-            StartCoroutine(FadeAndDestroy(elements[turnsToAttack]));
+            await FadeAndDestroy(elements[turnsToAttack]);
         }
     }
-    private IEnumerator FadeAndDestroy(GameObject element)
-    {
-        SpriteRenderer renderer = element.GetComponent<SpriteRenderer>();
-        Color color = renderer.color;
-        float alpha = color.a;
-        while(alpha > 0)
-        {
-            yield return null;
-            alpha -= Time.deltaTime;
-            color.a = alpha;
-            renderer.color = color;
-        }
-        Destroy(element);
-    } 
     
 }
