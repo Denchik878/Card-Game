@@ -349,6 +349,31 @@ MonoBehaviour:
   HPText: {fileID: 1033361169}
   damageText: {fileID: 0}
   isEnemy: 1
+--- !u!114 &421923848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421923841}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca21f92c9d66ea141acd20d59b731f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &421923849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421923841}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff36049b77d827540884bd376df19eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stunDuration: 0
 --- !u!1 &428147820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,6 +1619,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3592860708536601863, guid: 3aa4e4f452d2b2946a196943c4af51af, type: 3}
       insertIndex: -1
       addedObject: {fileID: 421923845}
+    - targetCorrespondingSourceObject: {fileID: 3592860708536601863, guid: 3aa4e4f452d2b2946a196943c4af51af, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 421923849}
+    - targetCorrespondingSourceObject: {fileID: 3592860708536601863, guid: 3aa4e4f452d2b2946a196943c4af51af, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 421923848}
     - targetCorrespondingSourceObject: {fileID: 3592860707516879797, guid: 3aa4e4f452d2b2946a196943c4af51af, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}

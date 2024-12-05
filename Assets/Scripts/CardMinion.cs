@@ -17,5 +17,4 @@ public class CardMinion : Card
             await FadeAndDestroy(elements[turnsToAttack]);
         }
     }
-    
 }

@@ -1,28 +1,62 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : Card
+public abstract class  Weapon : Card
 {
-    public GameObject[] elements;
-    public int turnsToAttack;
-    public Card weaponPrefab;
-    public override async Awaitable Turn()
+    public GameObject dragPrefab;
+    private GameObject dragObject;
+    private void OnMouseDown()
     {
-        if (turnsToAttack <= 1)
+        if(GameManager.Instance.State == GameState.PlayerTurn)
         {
-            await DestroySelf();
+            GameManager.Instance.ChangeState(GameState.PlayerAnimation);
+            dragObject = Instantiate(dragPrefab);
+        }
+    }
+    private void OnMouseUp()
+    {
+        if (GameManager.Instance.State == GameState.PlayerAnimation)
+        {            
+            DetectCard();
+            Destroy(dragObject);
+        }
+    }
+    private void Update()
+    {
+        if (dragObject == null)
+            return;
+        dragObject.transform.position = GetMouseWorldPosition();
+    }
+    private Vector3 GetMouseWorldPosition()
+    {
+        Vector3 mouseScreenPosition = Input.mousePosition;
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
+        mouseWorldPosition.z = 0;
+        return mouseWorldPosition;
+    }
+    private void DetectCard()
+    {
+        Collider2D collider = Physics2D.OverlapPoint(dragObject.transform.position);
+        if (!collider)
+        {
+            GameManager.Instance.ChangeState(GameState.PlayerTurn);
+            return;
+        }
+        Card buffer = collider.GetComponent<Card>();
+        if(buffer == null)
+        {
+            GameManager.Instance.ChangeState(GameState.PlayerTurn);
+            return;
+        }
+        if (buffer.isEnemy)
+        {
+            buffer.ChangeHealth(-damage);
+            Turn();
         }
         else
         {
-            turnsToAttack--;
-            await FadeAndDestroy(elements[turnsToAttack]);
+            GameManager.Instance.ChangeState(GameState.PlayerTurn);
         }
     }
-    private async void OnMouseDown()
-    {
-        FindAnyObjectByType<Player>().CreateWeapon(weaponPrefab);
-        GameManager.Instance.ChangeState(GameState.EnemyTurn);
-        await DestroySelf();
-    }
+
+    
 }
