@@ -51,6 +51,7 @@ public abstract class  Weapon : Card
         {
             buffer.ChangeHealth(-damage);
             Turn();
+            GameManager.Instance.ChangeState(GameState.EnemyTurn);
         }
         else
         {

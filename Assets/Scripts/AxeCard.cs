@@ -11,13 +11,13 @@ public class AxeCard : Weapon
     }
     public override async Awaitable Turn()
     {
+        base.Turn();
         attacksLeft--;
         if (attacksLeft == 0)
         {
             DestroySelf();
         }
         await FadeAndDestroy(elemets[attacksLeft]);
-        GameManager.Instance.ChangeState(GameState.EnemyTurn);
     }    
     
 }

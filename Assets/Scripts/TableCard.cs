@@ -21,8 +21,11 @@ public class TableCard : Card
     }
     private async void OnMouseDown()
     {
-        FindAnyObjectByType<Player>().CreateWeapon(weaponPrefab);
-        GameManager.Instance.ChangeState(GameState.EnemyTurn);
-        await DestroySelf();
+        if (GameManager.Instance.State == GameState.PlayerTurn)
+        {
+            FindAnyObjectByType<Player>().CreateWeapon(weaponPrefab);
+            GameManager.Instance.ChangeState(GameState.EnemyTurn);
+            await DestroySelf();
+        }
     }
 }

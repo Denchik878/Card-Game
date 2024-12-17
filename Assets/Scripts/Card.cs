@@ -10,6 +10,7 @@ public abstract class Card : MonoBehaviour
     public TMP_Text HPText;
     public TMP_Text damageText;
     public bool isEnemy;
+    private CardEffect[] effects;
     public event Action<Card> OnDeath;
     protected void Start()
     {
@@ -36,7 +37,18 @@ public abstract class Card : MonoBehaviour
         }
         HPText.text = currentHealth.ToString();
     }
-    public abstract Awaitable Turn();
+
+    public virtual async Awaitable Turn()
+    {
+        effects = GetComponents<CardEffect>();
+        foreach (var effect in effects)
+        {
+            if (effect.enabled)
+            {
+                effect.TakeEffect();
+            }
+        }
+    }
 
     protected async Awaitable DestroySelf()
     {

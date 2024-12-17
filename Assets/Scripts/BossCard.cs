@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class BossCard : Card
 {
-    public override async Awaitable Turn()
-    {
-
-    }
+    
 }

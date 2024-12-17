@@ -1,6 +1,8 @@
 using UnityEngine;
 
-public class Stun : MonoBehaviour
+public class Stun : CardEffect
 {
-    public int stunDuration;
+    public override void TakeEffect()
+    {
+    }
 }
