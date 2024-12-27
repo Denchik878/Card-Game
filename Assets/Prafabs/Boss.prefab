@@ -732,7 +732,7 @@ Transform:
   m_GameObject: {fileID: 3592860708536601863}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.88, y: -1.43, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -804,7 +804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  maxHealth: 30
+  maxHealth: 40
   HPText: {fileID: 3592860708352182951}
   damageText: {fileID: 3592860707516879795}
   isEnemy: 1

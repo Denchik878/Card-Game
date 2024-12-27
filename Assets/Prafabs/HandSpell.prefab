@@ -363,9 +363,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '1
-
-'
+  m_text: 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -728,7 +726,7 @@ Transform:
   m_GameObject: {fileID: 3481369675553737054}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.451, y: -2.505, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -759,8 +757,9 @@ MonoBehaviour:
   damage: 0
   maxHealth: 0
   HPText: {fileID: 0}
-  damageText: {fileID: 0}
+  damageText: {fileID: 3481369675051611599}
   isEnemy: 0
+  animationSpeed: 1
   dragPrefab: {fileID: 8120054307815012329, guid: e3d9be1a8b1fbeb4ea4a023ad0edce3f, type: 3}
 --- !u!61 &4599794410595121412
 BoxCollider2D:
