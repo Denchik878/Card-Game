@@ -12,6 +12,7 @@ public abstract class Card : MonoBehaviour
     public bool isEnemy;
     private CardEffect[] effects;
     public event Action<Card> OnDeath;
+    public float animationSpeed = 1;
     protected void Start()
     {
         if (damageText != null)
@@ -64,7 +65,7 @@ public abstract class Card : MonoBehaviour
         while(alpha > 0)
         {
             await Awaitable.NextFrameAsync();
-            alpha -= Time.deltaTime;
+            alpha -= Time.deltaTime * animationSpeed;
             color.a = alpha;
             renderer.color = color;
         }

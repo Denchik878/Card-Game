@@ -18,6 +18,10 @@ public class AxeCard : Weapon
             DestroySelf();
         }
         await FadeAndDestroy(elemets[attacksLeft]);
-    }    
-    
+    }
+
+    protected override void Damage(Card enemyCard)
+    {
+        enemyCard.ChangeHealth(-damage);
+    }
 }

@@ -715,6 +715,7 @@ GameObject:
   - component: {fileID: 1444724914}
   - component: {fileID: 7768496005020217441}
   - component: {fileID: 5639768795309584125}
+  - component: {fileID: 5516465403901890148}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -807,6 +808,7 @@ MonoBehaviour:
   HPText: {fileID: 3592860708352182951}
   damageText: {fileID: 3592860707516879795}
   isEnemy: 1
+  animationSpeed: 10
 --- !u!114 &5639768795309584125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -814,12 +816,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3592860708536601863}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca21f92c9d66ea141acd20d59b731f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turns: 0
   damagePerTurn: 1
+--- !u!114 &5516465403901890148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3592860708536601863}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff36049b77d827540884bd376df19eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turns: 0
 --- !u!1 &3592860708592995733
 GameObject:
   m_ObjectHideFlags: 0

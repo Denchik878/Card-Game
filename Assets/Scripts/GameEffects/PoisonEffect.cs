@@ -8,6 +8,12 @@ public class PoisonEffect : CardEffect
 
     public override void TakeEffect()
     {
+        if(turns == 0)
+        {
+            this.enabled = false;
+            return;
+        }
         baseCard.ChangeHealth(-damagePerTurn);
+        turns--;
     }
 }

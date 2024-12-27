@@ -708,9 +708,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4088340150552258665}
   - component: {fileID: 4088340150552258671}
-  - component: {fileID: 5646131656662051689}
   - component: {fileID: 6366690919364850281}
   - component: {fileID: 5315020813516829751}
+  - component: {fileID: 5646131656662051689}
   m_Layer: 0
   m_Name: Red Crystal
   m_TagString: Untagged
@@ -761,13 +761,40 @@ MonoBehaviour:
   HPText: {fileID: 4088340150054731877}
   damageText: {fileID: 0}
   isEnemy: 1
+  animationSpeed: 10
   elements:
   - {fileID: 4088340150491779876}
   - {fileID: 4088340150594629224}
   - {fileID: 4088340150321937148}
   - {fileID: 4088340150401929983}
   - {fileID: 4088340149832744681}
-  turnsToAttack: 5
+--- !u!114 &6366690919364850281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4088340150552258666}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca21f92c9d66ea141acd20d59b731f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turns: 0
+  damagePerTurn: 2
+--- !u!114 &5315020813516829751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4088340150552258666}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff36049b77d827540884bd376df19eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turns: 0
 --- !u!61 &5646131656662051689
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -814,31 +841,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.4018798, y: 1.8781817}
   m_EdgeRadius: 0
---- !u!114 &6366690919364850281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4088340150552258666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca21f92c9d66ea141acd20d59b731f5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damagePerTurn: 2
---- !u!114 &5315020813516829751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4088340150552258666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff36049b77d827540884bd376df19eb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4088340150594629224
 GameObject:
   m_ObjectHideFlags: 0

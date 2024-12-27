@@ -9,4 +9,10 @@ public class HerzCard : Weapon
         base.Turn();
         GameManager.Instance.ChangeState(GameState.EnemyTurn);
     }
+
+    protected override void Damage(Card enemyCard)
+    {
+        enemyCard.ChangeHealth(-enemyCard.maxHealth);
+        ChangeHealth(-enemyCard.damage);
+    }
 }

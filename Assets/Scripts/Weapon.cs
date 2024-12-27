@@ -47,17 +47,10 @@ public abstract class  Weapon : Card
             GameManager.Instance.ChangeState(GameState.PlayerTurn);
             return;
         }
-        if (buffer.isEnemy)
-        {
-            buffer.ChangeHealth(-damage);
-            Turn();
-            GameManager.Instance.ChangeState(GameState.EnemyTurn);
-        }
-        else
-        {
-            GameManager.Instance.ChangeState(GameState.PlayerTurn);
-        }
+        Damage(buffer);
+        Turn();
+        GameManager.Instance.ChangeState(GameState.EnemyTurn);
     }
-
+    protected abstract void Damage(Card enemyCard);
     
 }

@@ -3,8 +3,12 @@ using UnityEngine;
 public class CardMinion : Card
 {
     public GameObject[] elements;
-    public int turnsToAttack;
-    
+    private int turnsToAttack;
+
+    private void Awake()
+    {
+        turnsToAttack = elements.Length;
+    }
     public override async Awaitable Turn()
     {
         base.Turn();
