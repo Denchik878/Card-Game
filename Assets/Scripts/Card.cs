@@ -39,7 +39,7 @@ public abstract class Card : MonoBehaviour
         HPText.text = currentHealth.ToString();
     }
 
-    public virtual async Awaitable Turn()
+    public async Awaitable BaseTurn()
     {
         effects = GetComponents<CardEffect>();
         foreach (var effect in effects)
@@ -49,11 +49,15 @@ public abstract class Card : MonoBehaviour
                 effect.TakeEffect();
             }
         }
+        await Turn();
+    }
+    protected virtual async Awaitable Turn()
+    {
+        
     }
 
     protected async Awaitable DestroySelf()
     {
-        await Awaitable.NextFrameAsync();
         OnDeath?.Invoke(this);
     }
 

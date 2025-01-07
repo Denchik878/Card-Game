@@ -46,6 +46,15 @@ public class Player : MonoBehaviour
         }
     }
 
+    public async void FinishTurn()
+    {
+        foreach (Card card in activeCards)
+        {
+            await card.BaseTurn();
+            GameManager.Instance.ChangeState(GameState.EnemyTurn);
+        }
+    }
+
     private async void DisposeCard(Card disposableCard)
     {
         while (GameManager.Instance.State != GameState.EnemyTurn && GameManager.Instance.State != GameState.EnemyAnimaton)
@@ -53,6 +62,7 @@ public class Player : MonoBehaviour
             await Awaitable.NextFrameAsync();
         }
         activeCards.Remove(disposableCard);
+        disposableCard.OnDeath -= DisposeCard;
         Destroy(disposableCard.gameObject);
     }
 }

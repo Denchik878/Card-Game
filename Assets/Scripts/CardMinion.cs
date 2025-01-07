@@ -9,9 +9,8 @@ public class CardMinion : Card
     {
         turnsToAttack = elements.Length;
     }
-    public override async Awaitable Turn()
+    protected override async Awaitable Turn()
     {
-        base.Turn();
         if(turnsToAttack <= 1)
         {
             FindAnyObjectByType<HerzCard>().ChangeHealth(-damage);

@@ -1,9 +1,18 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class  Weapon : Card
 {
     public GameObject dragPrefab;
     private GameObject dragObject;
+    protected Player player;
+
+    protected void Awake()
+    {
+        player = FindAnyObjectByType<Player>();
+    }
+
     private void OnMouseDown()
     {
         if(GameManager.Instance.State == GameState.PlayerTurn)
@@ -33,7 +42,7 @@ public abstract class  Weapon : Card
         mouseWorldPosition.z = 0;
         return mouseWorldPosition;
     }
-    private void DetectCard()
+    private void  DetectCard()
     {
         Collider2D collider = Physics2D.OverlapPoint(dragObject.transform.position);
         if (!collider)
@@ -48,8 +57,6 @@ public abstract class  Weapon : Card
             return;
         }
         Damage(buffer);
-        Turn();
-        GameManager.Instance.ChangeState(GameState.EnemyTurn);
     }
     protected abstract void Damage(Card enemyCard);
     

@@ -9,19 +9,16 @@ public class AxeCard : Weapon
         base.Start();
         attacksLeft = elemets.Length;
     }
-    public override async Awaitable Turn()
+    protected override async void Damage(Card enemyCard)
     {
-        base.Turn();
+        enemyCard.ChangeHealth(-damage);
+        player.FinishTurn();
         attacksLeft--;
         if (attacksLeft == 0)
         {
             DestroySelf();
+            return;
         }
         await FadeAndDestroy(elemets[attacksLeft]);
-    }
-
-    protected override void Damage(Card enemyCard)
-    {
-        enemyCard.ChangeHealth(-damage);
     }
 }

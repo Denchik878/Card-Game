@@ -9,22 +9,25 @@ public class EnemyAI : MonoBehaviour
 {
     public Spawner spawner;
     public List<Card> activeCards = new();
-    private List<Card> disposeCards = new();
+
+    private void Start()
+    {
+        foreach (Card card in activeCards)
+        {
+            card.OnDeath += DisposeCard;
+        }
+    }
+
     async void Update()
     {
         if (GameManager.Instance.State == GameState.EnemyTurn)
         {
             GameManager.Instance.ChangeState(GameState.EnemyAnimaton);
+            
             foreach (Card card in activeCards)
             {
-                await card.Turn();
+                await card.BaseTurn();
             }
-            activeCards.RemoveAll(card => disposeCards.Contains(card));
-            foreach (Card card in disposeCards)
-            {
-                Destroy(card.gameObject);
-            }
-            disposeCards.Clear();
             var newCards = spawner.Spawn();
             foreach(Card card in newCards)
             {
@@ -50,11 +53,16 @@ public class EnemyAI : MonoBehaviour
             card.OnDeath -= DisposeCard;
         }
     }
-
-    public void DisposeCard(Card disposableCard)
+    public async void DisposeCard(Card disposableCard)
     {
-        disposeCards.Add(disposableCard);
+        while (GameManager.Instance.State != GameState.PlayerTurn &&
+               GameManager.Instance.State != GameState.PlayerAnimation)
+        {
+            await Awaitable.NextFrameAsync();
+        }
+        activeCards.Remove(disposableCard);
         disposableCard.OnDeath -= DisposeCard;
+        Destroy(disposableCard.gameObject);
     }
 }
 
