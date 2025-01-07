@@ -634,8 +634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - {fileID: 0}
-  activeCards:
-  - {fileID: 0}
+  activeCards: []
 --- !u!4 &601378920
 Transform:
   m_ObjectHideFlags: 0

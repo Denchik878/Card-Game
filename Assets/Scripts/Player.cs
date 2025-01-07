@@ -9,11 +9,12 @@ public class Player : MonoBehaviour
     public List<Card> activeCards = new();
     private void Start()
     {
+        points = GetComponentsInChildren<Point>();
         foreach (Card card in activeCards)
         {
             card.OnDeath += DisposeCard;
         }
-        points = GetComponentsInChildren<Point>();
+        
     }
 
     private void OnEnable()
