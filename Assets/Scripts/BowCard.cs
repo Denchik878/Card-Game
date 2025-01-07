@@ -22,6 +22,7 @@ public class BowCard : Weapon
                 card.ChangeHealth(-damage);
             }
             cardsToDamage.Clear();
+            
         }
     }
     
@@ -29,6 +30,18 @@ public class BowCard : Weapon
     {
         DelayedDamage(enemyCard);
         player.FinishTurn();
+        attacksLeft--;
+        if (attacksLeft == 0)
+        {
+            currentPoint.currentCard = null;
+            var sprites = GetComponentsInChildren<SpriteRenderer>();
+            foreach (var sprite in sprites)
+            {
+                sprite.enabled = false;
+            }
+            return;
+        }
+        await FadeAndDestroy(elemets[attacksLeft]);
     }
     private async void DelayedDamage(Card card)
     {
@@ -42,5 +55,9 @@ public class BowCard : Weapon
             await Awaitable.NextFrameAsync();
         }
         cardsToDamage.Add(card);
+        if (attacksLeft == 0)
+        {
+            DestroySelf();
+        }
     }
 }

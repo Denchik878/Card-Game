@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
                 newCard.OnDeath += DisposeCard;
                 activeCards.Add(newCard);
                 point.currentCard = newCard;
+                newCard.currentPoint = point;
             }
         }
     }

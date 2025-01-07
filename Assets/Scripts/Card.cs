@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Card : MonoBehaviour
 {
+    public Point currentPoint;
     public int damage;
     public int maxHealth;
     private int currentHealth;
