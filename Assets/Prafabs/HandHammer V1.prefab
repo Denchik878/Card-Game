@@ -185,7 +185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 924855260551946029}
   - component: {fileID: 924855260551946031}
-  - component: {fileID: 924855260730121986}
+  - component: {fileID: -847492428596912792}
   m_Layer: 0
   m_Name: HandHammer V1
   m_TagString: Untagged
@@ -264,7 +264,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.3905925, y: 1.8934805}
   m_EdgeRadius: 0
---- !u!114 &924855260730121986
+--- !u!114 &-847492428596912792
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -273,15 +273,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 924855260551946028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1075ee24fe3b8294d943992f9f4916f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 47bf8382f35987143acb480ee140bec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
+  currentPoint: {fileID: 0}
+  damage: 4
   maxHealth: 0
   HPText: {fileID: 0}
   damageText: {fileID: 6223648643666814115}
   isEnemy: 0
-  animationSpeed: 10
+  animationSpeed: 1
   dragPrefab: {fileID: 8120054307815012329, guid: e3d9be1a8b1fbeb4ea4a023ad0edce3f, type: 3}
   elemets:
   - {fileID: 924855261990524237}

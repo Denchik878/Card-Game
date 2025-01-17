@@ -392,9 +392,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 444775821}
   - {fileID: 1984072371}
   - {fileID: 748216335}
-  - {fileID: 444775821}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &428147822
@@ -465,6 +465,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6ddb6a762ba48768d549803893cf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  length: 3
+  index: 1
   currentCard: {fileID: 244655551}
 --- !u!1 &519420028
 GameObject:
@@ -648,8 +650,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 609844257}
   - {fileID: 920886641}
+  - {fileID: 609844257}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &609844256
@@ -696,6 +698,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6ddb6a762ba48768d549803893cf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  length: 2
+  index: 2
   currentCard: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
@@ -825,6 +829,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6ddb6a762ba48768d549803893cf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  length: 3
+  index: 3
   currentCard: {fileID: 0}
 --- !u!1 &920886640
 GameObject:
@@ -870,6 +876,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6ddb6a762ba48768d549803893cf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  length: 2
+  index: 1
   currentCard: {fileID: 0}
 --- !u!1 &1117117547
 GameObject:
@@ -1249,6 +1257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6ddb6a762ba48768d549803893cf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  length: 3
+  index: 2
   currentCard: {fileID: 231137013}
 --- !u!1 &2019576142
 GameObject:
@@ -1340,11 +1350,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 924855260551946029, guid: 70c10b676851341dc99be32084728c69, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.08
+      value: -2.06
       objectReference: {fileID: 0}
     - target: {fileID: 924855260551946029, guid: 70c10b676851341dc99be32084728c69, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.02
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 924855260551946029, guid: 70c10b676851341dc99be32084728c69, type: 3}
       propertyPath: m_LocalPosition.z

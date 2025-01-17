@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class BowCard : Weapon
@@ -39,6 +40,8 @@ public class BowCard : Weapon
             {
                 sprite.enabled = false;
             }
+            GetComponent<Collider2D>().enabled = false;
+            GetComponentInChildren<TMP_Text>().enabled = false;
             return;
         }
         await FadeAndDestroy(elemets[attacksLeft]);

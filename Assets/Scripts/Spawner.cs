@@ -17,6 +17,7 @@ public class Spawner : MonoBehaviour
             int random = Random.Range(0, prefabs.Length);
             Card card = Instantiate(prefabs[random], point.transform.position, Quaternion.identity);
             point.currentCard = card;
+            card.currentPoint = point;
             cards.Add(card);
         }
         return cards;
