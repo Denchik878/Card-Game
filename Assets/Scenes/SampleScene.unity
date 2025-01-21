@@ -410,13 +410,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 4088340150552258671, guid: af60ea64b9f0db94dbe7b5c645a61e13, type: 3}
-  - {fileID: 4088340150552258671, guid: 96c48ee85c29a43f2a7130d1e4373cd3, type: 3}
-  - {fileID: 4088340150552258671, guid: 28dba4d50b1e748288dda832e8f3c5d9, type: 3}
-  - {fileID: 2705947517820227152, guid: 7c938a494cc51487cb9155dc131bdc59, type: 3}
-  - {fileID: 260036605393626478, guid: c3ae657fdb37bed49bb78422d564ca06, type: 3}
-  - {fileID: 8563109665988169774, guid: cb8a40c6b78bada4fa5680709e0c787e, type: 3}
-  - {fileID: 2705947517820227152, guid: 70c10b676851341dc99be32084728c69, type: 3}
+  - card: {fileID: 4088340150552258671, guid: af60ea64b9f0db94dbe7b5c645a61e13, type: 3}
+    weight: 100
+  - card: {fileID: 4088340150552258671, guid: 96c48ee85c29a43f2a7130d1e4373cd3, type: 3}
+    weight: 100
+  - card: {fileID: 4088340150552258671, guid: 28dba4d50b1e748288dda832e8f3c5d9, type: 3}
+    weight: 100
+  - card: {fileID: 4088340150552258671, guid: 15f587efaf69e41e7951b5f7af8758fd, type: 3}
+    weight: 100
+  - card: {fileID: 4088340150552258671, guid: 0ee20de009b0b49abb8743b7f0a994cd, type: 3}
+    weight: 100
+  - card: {fileID: 2705947517820227152, guid: 7c938a494cc51487cb9155dc131bdc59, type: 3}
+    weight: 100
+  - card: {fileID: 2705947517820227152, guid: 70c10b676851341dc99be32084728c69, type: 3}
+    weight: 50
+  - card: {fileID: 260036605393626478, guid: c3ae657fdb37bed49bb78422d564ca06, type: 3}
+    weight: 100
+  - card: {fileID: 8563109665988169774, guid: cb8a40c6b78bada4fa5680709e0c787e, type: 3}
+    weight: 50
+  - card: {fileID: 8563109665988169774, guid: cb8a40c6b78bada4fa5680709e0c787e, type: 3}
+    weight: 0
   points:
   - {fileID: 1984072372}
   - {fileID: 748216336}

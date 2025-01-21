@@ -758,8 +758,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 969b1553f4aba4c9390d7083f7efa8af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPoint: {fileID: 0}
   damage: 3
-  maxHealth: 5
+  maxHealth: 3
   HPText: {fileID: 4088340150054731877}
   damageText: {fileID: 0}
   isEnemy: 1
