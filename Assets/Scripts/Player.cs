@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
                 activeCards.Add(newCard);
                 point.currentCard = newCard;
                 newCard.currentPoint = point;
+                break;
             }
         }
     }

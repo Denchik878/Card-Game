@@ -16,13 +16,31 @@ public class Spawner : MonoBehaviour
         {
             if (point.currentCard != null)
                 continue;
-            int random = Random.Range(0, prefabs.Length);
-            Card card = Instantiate(prefabs[random].card, point.transform.position, Quaternion.identity);
+            Card card = Instantiate(GetRandomCard(), point.transform.position, Quaternion.identity);
             point.currentCard = card;
             card.currentPoint = point;
             cards.Add(card);
         }
         return cards;
+    }
+    private Card GetRandomCard()
+    {
+        int totalWeight = 0;
+        foreach (CardWeight weight in prefabs)
+        {
+            totalWeight += weight.weight;
+        }
+        int randomWeight = Random.Range(0, totalWeight);
+        int currentWeight = 0;
+        foreach (CardWeight weight in prefabs)
+        {
+            currentWeight += weight.weight;
+            if (currentWeight >= randomWeight)
+            {
+                return weight.card;
+            }
+        }
+        return null;
     }
 }
 [Serializable]

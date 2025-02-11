@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class BowCard : Weapon
 {
-    private int attacksLeft;
-    public GameObject[] elemets;
     private int delay;
     private List<Card> cardsToDamage = new();
-    private void Start()
-    {
-        base.Start();
-        attacksLeft = elemets.Length;
-    }
 
     protected async override Awaitable Turn()
     {
@@ -31,8 +24,8 @@ public class BowCard : Weapon
     {
         DelayedDamage(enemyCard);
         player.FinishTurn();
-        attacksLeft--;
-        if (attacksLeft == 0)
+        ChangeCrystalAmount(-1);
+        if (crystalAmount == 0)
         {
             currentPoint.currentCard = null;
             var sprites = GetComponentsInChildren<SpriteRenderer>();
@@ -44,7 +37,6 @@ public class BowCard : Weapon
             GetComponentInChildren<TMP_Text>().enabled = false;
             return;
         }
-        await FadeAndDestroy(elemets[attacksLeft]);
     }
     private async void DelayedDamage(Card card)
     {
@@ -58,7 +50,7 @@ public class BowCard : Weapon
             await Awaitable.NextFrameAsync();
         }
         cardsToDamage.Add(card);
-        if (attacksLeft == 0)
+        if (crystalAmount == 0)
         {
             DestroySelf();
         }
