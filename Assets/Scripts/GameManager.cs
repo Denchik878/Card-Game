@@ -7,6 +7,8 @@ using UnityEngine.Serialization;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public int enemyTurnCount;
+    public int playerTurnCount;
     public GameState State = GameState.PlayerTurn;
     public event Action OnStateChanged;
     void Awake()

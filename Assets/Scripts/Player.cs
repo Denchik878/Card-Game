@@ -14,9 +14,7 @@ public class Player : MonoBehaviour
         {
             card.OnDeath += DisposeCard;
         }
-        
     }
-
     private void OnEnable()
     {
         foreach (Card card in activeCards)
@@ -24,7 +22,6 @@ public class Player : MonoBehaviour
             card.OnDeath += DisposeCard;
         }
     }
-
     private void OnDisable()
     {
         foreach (Card card in activeCards)
@@ -32,7 +29,6 @@ public class Player : MonoBehaviour
             card.OnDeath -= DisposeCard;
         }
     }
-
     public void CreateWeapon(Card weapon)
     {
         foreach (Point point in points)
@@ -48,16 +44,15 @@ public class Player : MonoBehaviour
             }
         }
     }
-
     public async void FinishTurn()
     {
         foreach (Card card in activeCards)
         {
             await card.BaseTurn();
-            GameManager.Instance.ChangeState(GameState.EnemyTurn);
         }
+        GameManager.Instance.ChangeState(GameState.EnemyTurn);
+        GameManager.Instance.playerTurnCount++;
     }
-
     private async void DisposeCard(Card disposableCard)
     {
         while (GameManager.Instance.State != GameState.EnemyTurn && GameManager.Instance.State != GameState.EnemyAnimaton)

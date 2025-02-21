@@ -6,7 +6,11 @@ public class SpellCard : Weapon
     {
         enemyCard.GetComponent<PoisonEffect>().enabled = true;
         enemyCard.GetComponent<PoisonEffect>().turns = 3;
-        await DestroySelf();
+        ChangeCrystalAmount(-1);
         player.FinishTurn();
+        if (crystalAmount == 0)
+        {
+            await DestroySelf();
+        }
     }
 }

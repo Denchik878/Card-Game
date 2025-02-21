@@ -30,7 +30,6 @@ public abstract class Card : MonoBehaviour
             ChangeHealth(maxHealth);
         }        
     }
-
     public void ChangeHealth(int a)
     {
         currentHealth += a;
@@ -45,7 +44,6 @@ public abstract class Card : MonoBehaviour
         }
         HPText.text = currentHealth.ToString();
     }
-
     public async Awaitable BaseTurn()
     {
         effects = GetComponents<CardEffect>();
@@ -58,7 +56,6 @@ public abstract class Card : MonoBehaviour
         }
         await Turn();
     }
-
     public void ChangeCrystalAmount(int amount)
     {
         crystalAmount += amount;
@@ -75,17 +72,14 @@ public abstract class Card : MonoBehaviour
             crystals.Add(newCrystal);
         }
     }
-
     protected virtual async Awaitable Turn()
     {
         
     }
-
     protected async Awaitable DestroySelf()
     {
         OnDeath?.Invoke(this);
     }
-
     protected async Awaitable FadeAndDestroy(GameObject element)
     {
         SpriteRenderer renderer = element.GetComponent<SpriteRenderer>();
@@ -100,10 +94,20 @@ public abstract class Card : MonoBehaviour
         }
         Destroy(element);
     }
-
     private Vector3[] CrystalsPositions(int count)
     {
         Vector3[] positions = new Vector3[count];
+        if (count == 1)
+        {
+            positions[0] = new Vector3(0, 0.78f, 0);
+            return positions;
+        }
+        if (count == 2)
+        {
+            positions[0] = new Vector3(-0.25f, 0.78f, 0);
+            positions[1] = new Vector3(0.25f, 0.78f, 0);
+            return positions;
+        }
         float step = 1 / ((float)count - 1);
         for(int i = 0; i < count; i++)
         {

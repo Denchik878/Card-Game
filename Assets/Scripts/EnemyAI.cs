@@ -35,6 +35,7 @@ public class EnemyAI : MonoBehaviour
             }
             activeCards.AddRange(newCards);
             GameManager.Instance.ChangeState(GameState.PlayerTurn);
+            GameManager.Instance.enemyTurnCount++;
         }
     }
 

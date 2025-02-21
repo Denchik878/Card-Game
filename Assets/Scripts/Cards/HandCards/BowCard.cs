@@ -35,24 +35,24 @@ public class BowCard : Weapon
             }
             GetComponent<Collider2D>().enabled = false;
             GetComponentInChildren<TMP_Text>().enabled = false;
-            return;
         }
     }
     private async void DelayedDamage(Card card)
     {
-        while (GameManager.Instance.State == GameState.PlayerTurn || GameManager.Instance.State == GameState.PlayerAnimation)
+        int currentTurn = GameManager.Instance.enemyTurnCount;
+        while (GameManager.Instance.enemyTurnCount != currentTurn + 2 && (GameManager.Instance.State != GameState.PlayerTurn || 
+               GameManager.Instance.State != GameState.PlayerAnimation))
         {
             await Awaitable.NextFrameAsync();
         }
-        
-        while (GameManager.Instance.State == GameState.EnemyTurn || GameManager.Instance.State == GameState.EnemyAnimaton)
+
+        if (card != null)
         {
-            await Awaitable.NextFrameAsync();
+            card.ChangeHealth(-damage);
         }
-        cardsToDamage.Add(card);
         if (crystalAmount == 0)
         {
-            DestroySelf();
+            await DestroySelf();
         }
     }
 }

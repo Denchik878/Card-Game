@@ -6,25 +6,18 @@ using UnityEngine;
 
 public class TableCard : Card
 {
-    public GameObject[] elements;
-    public int turnsToDestroy;
     public Card weaponPrefab;
 
-    private void Awake()
-    {
-        turnsToDestroy = elements.Length;
-    }
 
     protected override async Awaitable Turn()
     {
-        if (turnsToDestroy <= 1)
+        if (crystalAmount <= 1)
         {
-            await DestroySelf();
+            DestroySelf();
         }
         else
         {
-            turnsToDestroy--;
-            await FadeAndDestroy(elements[turnsToDestroy]);
+            ChangeCrystalAmount(-1);
         }
     }
     private async void OnMouseDown()

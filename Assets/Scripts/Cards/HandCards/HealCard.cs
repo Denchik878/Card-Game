@@ -6,8 +6,12 @@ public class HealCard : Weapon
     
     protected override async void Damage(Card enemyCard)
     {
+        ChangeCrystalAmount(-1);
         enemyCard.ChangeHealth(healAmount);
-        DestroySelf();
         player.FinishTurn();
+        if (crystalAmount == 0)
+        {
+            await DestroySelf();
+        }
     }
 }

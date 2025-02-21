@@ -12,7 +12,6 @@ public abstract class  Weapon : Card
     {
         player = FindAnyObjectByType<Player>();
     }
-
     private void OnMouseDown()
     {
         if(GameManager.Instance.State == GameState.PlayerTurn)
@@ -59,5 +58,4 @@ public abstract class  Weapon : Card
         Damage(buffer);
     }
     protected abstract void Damage(Card enemyCard);
-    
 }
