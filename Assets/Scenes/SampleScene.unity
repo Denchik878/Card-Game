@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTurnCount: 0
   playerTurnCount: 0
+  valuta: 0
   State: 1
 --- !u!4 &45915060
 Transform:
@@ -239,6 +240,7 @@ GameObject:
   - component: {fileID: 213748236}
   - component: {fileID: 213748235}
   - component: {fileID: 213748234}
+  - component: {fileID: 213748239}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -342,6 +344,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &213748239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213748233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea219c5dd157747eea1da69367fcfaf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &231137013 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2705947517820227152, guid: 7c938a494cc51487cb9155dc131bdc59, type: 3}
