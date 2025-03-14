@@ -12,7 +12,7 @@ public abstract class  Weapon : Card
     {
         player = FindAnyObjectByType<Player>();
     }
-    private void OnMouseDown()
+    protected void OnMouseDown()
     {
         if(GameManager.Instance.State == GameState.PlayerTurn)
         {

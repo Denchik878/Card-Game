@@ -5,6 +5,12 @@ using UnityEngine;
 public class GameStateUI : MonoBehaviour
 {
     public TMP_Text gameStateText;
+    public TMP_Text valutaText;
+
+    private void Update()
+    {
+        valutaText.text = GameManager.Instance.valuta.ToString();
+    }
 
     private async void OnEnable()
     {
