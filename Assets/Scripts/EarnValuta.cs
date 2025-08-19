@@ -1,8 +1,14 @@
+using System;
 using UnityEngine;
 
 public class EarnValuta : MonoBehaviour
 {
     private float timer;
+
+    private void Start()
+    {
+        
+    }
 
     void Update()
     {
