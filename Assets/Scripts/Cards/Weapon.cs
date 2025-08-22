@@ -44,9 +44,9 @@ public abstract class  Weapon : Card
     private void  DetectCard()
     {
         Collider2D collider = Physics2D.OverlapPoint(dragObject.transform.position);
-        if (!collider)
+        if (!collider || collider.GetComponent<Card>().HPText == null)
         {
-            GameManager.Instance.ChangeState(GameState.PlayerTurn);
+            CancelAttack();
             return;
         }
         Card buffer = collider.GetComponent<Card>();
@@ -56,6 +56,10 @@ public abstract class  Weapon : Card
             return;
         }
         Damage(buffer);
+    }
+    protected void CancelAttack()
+    {
+        GameManager.Instance.ChangeState(GameState.PlayerTurn);
     }
     protected abstract void Damage(Card enemyCard);
 }
