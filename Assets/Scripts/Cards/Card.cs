@@ -18,6 +18,8 @@ public abstract class Card : MonoBehaviour
     public GameObject crystal;
     public int crystalAmount;
     private List<GameObject> crystals = new();
+    public AudioClip takeDamageSound;
+    public AudioClip healingSound;
     protected void Start()
     {
         ChangeCrystalAmount(0);
@@ -41,6 +43,15 @@ public abstract class Card : MonoBehaviour
         {
             currentHealth = 0;
             OnDeath?.Invoke(this);
+        }
+
+        if (a < 0)
+        {
+            AudioManager.Instance.PlayClip(takeDamageSound);
+        }
+        else
+        {
+            AudioManager.Instance.PlayClip(healingSound);
         }
         HPText.text = currentHealth.ToString();
     }

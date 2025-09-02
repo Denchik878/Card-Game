@@ -6,6 +6,7 @@ public class AddCrystal : Weapon
     public int addCrystalAmount;
     protected override void Damage(Card enemyCard)
     {
+        GameManager.Instance.valuta -= abilityCost;
         enemyCard.ChangeCrystalAmount(addCrystalAmount);
         player.FinishTurn();
     }
@@ -13,7 +14,6 @@ public class AddCrystal : Weapon
     {
         if(GameManager.Instance.valuta >= abilityCost)
         {
-            GameManager.Instance.valuta -= abilityCost;
             base.OnMouseDown();
         }
     }

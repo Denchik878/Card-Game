@@ -7,7 +7,7 @@ using UnityEngine;
 public class TableCard : Card
 {
     public Card weaponPrefab;
-
+    public AudioClip clip;
 
     protected override async Awaitable Turn()
     {
@@ -27,6 +27,7 @@ public class TableCard : Card
             var player = FindAnyObjectByType<Player>();
             player.CreateWeapon(weaponPrefab);
             player.FinishTurn();
+            AudioManager.Instance.PlayClip(clip);
             await DestroySelf();
         }
     }

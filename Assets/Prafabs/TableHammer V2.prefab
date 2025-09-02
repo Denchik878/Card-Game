@@ -281,6 +281,7 @@ MonoBehaviour:
   crystal: {fileID: 5758797215522438911, guid: 3715cea815c3343cab9b8ab12f3e6f22, type: 3}
   crystalAmount: 3
   weaponPrefab: {fileID: 924855260730121986, guid: 7abff288f66019f46853a096af229d5a, type: 3}
+  clip: {fileID: 8300000, guid: 2b56fb187e5234f48b7ece1c1b2eace6, type: 3}
 --- !u!1 &924855261017647581
 GameObject:
   m_ObjectHideFlags: 0

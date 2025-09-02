@@ -276,19 +276,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1075ee24fe3b8294d943992f9f4916f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPoint: {fileID: 0}
   damage: 3
   maxHealth: 0
   HPText: {fileID: 0}
   damageText: {fileID: 6223648643666814115}
   isEnemy: 0
   animationSpeed: 10
+  crystal: {fileID: 0}
+  crystalAmount: 0
+  takeDamageSound: {fileID: 0}
+  healingSound: {fileID: 0}
   dragPrefab: {fileID: 8120054307815012329, guid: e3d9be1a8b1fbeb4ea4a023ad0edce3f, type: 3}
-  elemets:
-  - {fileID: 924855261990524237}
-  - {fileID: 924855262074364355}
-  - {fileID: 924855261063470604}
-  - {fileID: 924855261847776550}
-  - {fileID: 924855260772265449}
+  grabClip: {fileID: 8300000, guid: 887d4be082fed4d039af4b2e71f4d285, type: 3}
+  strikeClip: {fileID: 0}
 --- !u!1 &924855260772265449
 GameObject:
   m_ObjectHideFlags: 0

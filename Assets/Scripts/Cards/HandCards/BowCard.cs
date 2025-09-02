@@ -22,6 +22,11 @@ public class BowCard : Weapon
     
     protected override async void Damage(Card enemyCard)
     {
+        if (enemyCard.GetComponent<Card>().HPText == null)
+        {
+            CancelAttack();
+            return;
+        }
         DelayedDamage(enemyCard);
         player.FinishTurn();
         ChangeCrystalAmount(-1);

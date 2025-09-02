@@ -365,7 +365,11 @@ MonoBehaviour:
   animationSpeed: 10
   crystal: {fileID: 6937375598450179550, guid: e5d34f6d8ed626445b337435e8b15951, type: 3}
   crystalAmount: 1
+  takeDamageSound: {fileID: 0}
+  healingSound: {fileID: 0}
   dragPrefab: {fileID: 8120054307815012329, guid: e3d9be1a8b1fbeb4ea4a023ad0edce3f, type: 3}
+  grabClip: {fileID: 8300000, guid: 887d4be082fed4d039af4b2e71f4d285, type: 3}
+  strikeClip: {fileID: 0}
   healAmount: 5
 --- !u!1 &3041476615049292869
 GameObject:

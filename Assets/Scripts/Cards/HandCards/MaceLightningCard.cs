@@ -1,9 +1,14 @@
 using UnityEngine;
 
-public class MaceLightniingCard : Weapon
+public class MaceLightningCard : Weapon
 {
     protected override async void Damage(Card enemyCard)
     {
+        if (enemyCard.GetComponent<Card>().HPText == null)
+        {
+            CancelAttack();
+            return;
+        }
         enemyCard.ChangeHealth(-damage);
         DamageNeighbourCards(enemyCard);
         player.FinishTurn();
