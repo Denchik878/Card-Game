@@ -1595,7 +1595,11 @@ MonoBehaviour:
   animationSpeed: 1
   crystal: {fileID: 6937375598450179550, guid: e5d34f6d8ed626445b337435e8b15951, type: 3}
   crystalAmount: 1
+  takeDamageSound: {fileID: 0}
+  healingSound: {fileID: 0}
   dragPrefab: {fileID: 8120054307815012329, guid: e3d9be1a8b1fbeb4ea4a023ad0edce3f, type: 3}
+  grabClip: {fileID: 0}
+  strikeClip: {fileID: 0}
   abilityCost: 10
   addCrystalAmount: 3
 --- !u!1001 &1414010686
@@ -1706,7 +1710,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.482
   m_Pitch: 1
   Loop: 0
   Mute: 0
