@@ -365,6 +365,10 @@ MonoBehaviour:
   animationSpeed: 10
   crystal: {fileID: 6937375598450179550, guid: e5d34f6d8ed626445b337435e8b15951, type: 3}
   crystalAmount: 3
+  takeDamageSound: {fileID: 0}
+  healingSound: {fileID: 0}
+  valutaErned: 0
+  crystalsAddedByAbility: 3
   weaponPrefab: {fileID: 7743676686653219873, guid: d5daf4f50fb3a4beca78bc5c4a891dd1, type: 3}
   clip: {fileID: 8300000, guid: 2b56fb187e5234f48b7ece1c1b2eace6, type: 3}
 --- !u!1 &3041476615049292869

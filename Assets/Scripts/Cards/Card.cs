@@ -20,6 +20,8 @@ public abstract class Card : MonoBehaviour
     private List<GameObject> crystals = new();
     public AudioClip takeDamageSound;
     public AudioClip healingSound;
+    public int valutaErned;
+    public int crystalsAddedByAbility;
     protected void Start()
     {
         ChangeCrystalAmount(0);
@@ -42,7 +44,7 @@ public abstract class Card : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            OnDeath?.Invoke(this);
+            DestroySelf();
         }
 
         if (a < 0)
@@ -87,7 +89,7 @@ public abstract class Card : MonoBehaviour
     {
         
     }
-    protected async Awaitable DestroySelf()
+    protected virtual async Awaitable DestroySelf()
     {
         OnDeath?.Invoke(this);
     }

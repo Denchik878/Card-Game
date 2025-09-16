@@ -418,6 +418,8 @@ MonoBehaviour:
   crystalAmount: 4
   takeDamageSound: {fileID: 0}
   healingSound: {fileID: 0}
+  valutaErned: 3
+  crystalsAddedByAbility: 4
 --- !u!114 &6366690919364850281
 MonoBehaviour:
   m_ObjectHideFlags: 0

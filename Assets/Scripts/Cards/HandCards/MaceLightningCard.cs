@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MaceLightningCard : Weapon
 {
+    public int sideDamage;
     protected override async void Damage(Card enemyCard)
     {
         if (enemyCard.GetComponent<Card>().HPText == null)
@@ -30,7 +31,7 @@ public class MaceLightningCard : Weapon
             Card neighbour = point.GetPointByIndex(point.index + 1).currentCard;
             if (neighbour.isEnemy)
             {
-                neighbour.ChangeHealth(-damage/2);
+                neighbour.ChangeHealth(-sideDamage);
             }
         }
         if (point.index > 1)
@@ -38,7 +39,7 @@ public class MaceLightningCard : Weapon
             Card neighbour = point.GetPointByIndex(point.index - 1).currentCard;
             if (neighbour.isEnemy)
             {
-                neighbour.ChangeHealth(-damage/2);
+                neighbour.ChangeHealth(-sideDamage);
             }
         }
     }

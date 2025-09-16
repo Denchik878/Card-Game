@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPoint: {fileID: 0}
-  damage: 4
+  damage: 3
   maxHealth: 0
   HPText: {fileID: 0}
   damageText: {fileID: 6223648643666814115}
@@ -282,9 +282,12 @@ MonoBehaviour:
   crystalAmount: 4
   takeDamageSound: {fileID: 0}
   healingSound: {fileID: 0}
+  valutaErned: 0
+  crystalsAddedByAbility: 3
   dragPrefab: {fileID: 8120054307815012329, guid: e3d9be1a8b1fbeb4ea4a023ad0edce3f, type: 3}
   grabClip: {fileID: 8300000, guid: 887d4be082fed4d039af4b2e71f4d285, type: 3}
   strikeClip: {fileID: 8300000, guid: 5147232b1867242d8aaa43e622d39141, type: 3}
+  sideDamage: 2
 --- !u!1 &924855261017647581
 GameObject:
   m_ObjectHideFlags: 0
