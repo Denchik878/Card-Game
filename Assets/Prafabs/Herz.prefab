@@ -644,7 +644,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.82, y: 0.82, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7199740840306809457}
@@ -688,6 +688,8 @@ MonoBehaviour:
   crystalAmount: 0
   takeDamageSound: {fileID: 8300000, guid: d6244e44a4a2b4d81abe0b651d6160c2, type: 3}
   healingSound: {fileID: 8300000, guid: f8f14302c7e2442eca21ec96332628b5, type: 3}
+  valutaErned: 0
+  crystalsAddedByAbility: 0
   dragPrefab: {fileID: 8120054307815012329, guid: e3d9be1a8b1fbeb4ea4a023ad0edce3f, type: 3}
   grabClip: {fileID: 8300000, guid: 887d4be082fed4d039af4b2e71f4d285, type: 3}
   strikeClip: {fileID: 0}
