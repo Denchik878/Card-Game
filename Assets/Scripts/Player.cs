@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     public Point[] points;
     public List<Card> activeCards = new();
+    private HerzCard herz;
     private void Start()
     {
         points = GetComponentsInChildren<Point>();
@@ -14,6 +17,9 @@ public class Player : MonoBehaviour
         {
             card.OnDeath += DisposeCard;
         }
+
+        herz = activeCards.OfType<HerzCard>().FirstOrDefault();
+        herz.OnDeath += GameOver;
     }
     private void OnEnable()
     {
@@ -28,6 +34,7 @@ public class Player : MonoBehaviour
         {
             card.OnDeath -= DisposeCard;
         }
+        herz.OnDeath -= GameOver;
     }
     public void CreateWeapon(Card weapon)
     {
@@ -62,5 +69,11 @@ public class Player : MonoBehaviour
         activeCards.Remove(disposableCard);
         disposableCard.OnDeath -= DisposeCard;
         Destroy(disposableCard.gameObject);
+    }
+
+    private void GameOver(Card stalin)
+    {
+        print("Ты лох");
+        SceneManager.LoadScene("Sucker");
     }
 }
