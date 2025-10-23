@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sucker.unity
     guid: 4ea15679c47a54dceb0dd1bfe44f6229
+  - enabled: 1
+    path: Assets/Scenes/GoodBoy.unity
+    guid: 55517a7a706c3406093f923e4039d780
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

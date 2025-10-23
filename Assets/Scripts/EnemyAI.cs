@@ -1,14 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class EnemyAI : MonoBehaviour
 {
     public Spawner spawner;
     public List<Card> activeCards = new();
+    private BossCard boss;
 
     private void Start()
     {
@@ -16,6 +19,8 @@ public class EnemyAI : MonoBehaviour
         {
             card.OnDeath += DisposeCard;
         }
+        boss = activeCards.OfType<BossCard>().FirstOrDefault();
+        boss.OnDeath += EnemyLoose;
     }
 
     async void Update()
@@ -64,6 +69,11 @@ public class EnemyAI : MonoBehaviour
         activeCards.Remove(disposableCard);
         disposableCard.OnDeath -= DisposeCard;
         Destroy(disposableCard.gameObject);
+    }
+
+    private void EnemyLoose(Card hitler)
+    {
+        SceneManager.LoadScene(2);
     }
 }
 
