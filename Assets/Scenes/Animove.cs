@@ -11,19 +11,7 @@ public class Animove : MonoBehaviour
 
     private async void OnMouseDown()
     {
-        if (progress > 0)
-            return;
-        Vector3 current = Vector3.zero;
-        Vector3 start = transform.position;
-        while (progress < 1)
-        {
-            progress += Time.deltaTime / duration;
-            progress = Mathf.Clamp01(progress);
-            current = Vector3.LerpUnclamped(start, target.position, curve.Evaluate(progress));
-            transform.position = current;
-            await Awaitable.NextFrameAsync();
-        }
-        progress = 0;
+        
     }
 
     void Start()

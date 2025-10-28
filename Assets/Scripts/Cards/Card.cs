@@ -69,6 +69,10 @@ public abstract class Card : MonoBehaviour
         }
         await Turn();
     }
+    protected virtual async Awaitable Turn()
+    {
+        
+    }
     public void ChangeCrystalAmount(int amount)
     {
         crystalAmount += amount;
@@ -84,10 +88,6 @@ public abstract class Card : MonoBehaviour
                 Quaternion.identity, transform);
             crystals.Add(newCrystal);
         }
-    }
-    protected virtual async Awaitable Turn()
-    {
-        
     }
     protected virtual async Awaitable DestroySelf()
     {
