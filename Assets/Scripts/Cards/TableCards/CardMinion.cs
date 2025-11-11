@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CardMinion : Card
 {
-    public float progress;
+    private float progress;
     public AnimationCurve curve;
     public float duration;
     private bool isKilled = true;
