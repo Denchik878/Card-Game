@@ -11,7 +11,7 @@ public class SpellCard : Weapon
         }
         enemyCard.GetComponent<PoisonEffect>().enabled = true;
         enemyCard.GetComponent<PoisonEffect>().turns += 3;
-        ChangeCrystalAmount(-1);
+        await ChangeCrystalAmount(-1);
         player.FinishTurn();
         if (crystalAmount == 0)
         {

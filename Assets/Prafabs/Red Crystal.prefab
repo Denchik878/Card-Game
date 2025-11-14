@@ -499,13 +499,13 @@ MonoBehaviour:
   damageText: {fileID: 0}
   isEnemy: 1
   animationSpeed: 10
+  crystalAnimDura: 0.25
   crystal: {fileID: 405272174971257557, guid: 548261ce6d8533b448f5d2830f4b5ec3, type: 3}
   crystalAmount: 5
   takeDamageSound: {fileID: 0}
   healingSound: {fileID: 0}
   valutaErned: 4
   crystalsAddedByAbility: 4
-  progress: 0
   curve:
     serializedVersion: 2
     m_Curve:

@@ -12,8 +12,8 @@ public class MaceLightningCard : Weapon
         }
         enemyCard.ChangeHealth(-damage);
         DamageNeighbourCards(enemyCard);
+        await ChangeCrystalAmount(-1);
         player.FinishTurn();
-        ChangeCrystalAmount(-1);
         if (crystalAmount == 0)
         {
             DestroySelf();

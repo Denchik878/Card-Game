@@ -15,6 +15,7 @@ public abstract class Card : MonoBehaviour
     private CardEffect[] effects;
     public event Action<Card> OnDeath;
     public float animationSpeed = 1;
+    public float crystalAnimDura = 0.25f;
     public GameObject crystal;
     public int crystalAmount;
     private List<GameObject> crystals = new();
@@ -73,12 +74,20 @@ public abstract class Card : MonoBehaviour
     {
         
     }
-    public void ChangeCrystalAmount(int amount)
+    public async Awaitable ChangeCrystalAmount(int amount)
     {
         crystalAmount += amount;
         Vector3[] positions = CrystalsPositions(crystalAmount);
         foreach(GameObject crystal in crystals)
         {
+            float timer = 0;
+            var render = crystal.GetComponent<SpriteRenderer>();
+            while (timer < crystalAnimDura)
+            {
+                await Awaitable.NextFrameAsync();
+                timer += Time.deltaTime;
+                render.material.SetFloat("_Dissolved", 1 - timer / crystalAnimDura);
+            }
             Destroy(crystal);
         }
         crystals.Clear();

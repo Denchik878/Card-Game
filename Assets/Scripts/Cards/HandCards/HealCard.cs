@@ -11,7 +11,7 @@ public class HealCard : Weapon
             CancelAttack();
             return;
         }
-        ChangeCrystalAmount(-1);
+        await ChangeCrystalAmount(-1);
         enemyCard.ChangeHealth(healAmount);
         player.FinishTurn();
         if (crystalAmount == 0)

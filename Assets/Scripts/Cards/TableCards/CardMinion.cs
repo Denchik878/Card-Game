@@ -18,7 +18,7 @@ public class CardMinion : Card
         }
         else
         {
-            ChangeCrystalAmount(-1);
+            await ChangeCrystalAmount(-1);
         }
     }
 

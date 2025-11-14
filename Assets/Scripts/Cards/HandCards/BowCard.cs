@@ -28,8 +28,8 @@ public class BowCard : Weapon
             return;
         }
         DelayedDamage(enemyCard);
+        await ChangeCrystalAmount(-1);
         player.FinishTurn();
-        ChangeCrystalAmount(-1);
         if (crystalAmount == 0)
         {
             currentPoint.currentCard = null;

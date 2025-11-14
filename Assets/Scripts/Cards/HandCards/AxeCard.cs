@@ -15,8 +15,8 @@ public class AxeCard : Weapon
 
         await Animation(enemyCard.transform);
         enemyCard.ChangeHealth(-damage);
+        await ChangeCrystalAmount(-1);
         player.FinishTurn();
-        ChangeCrystalAmount(-1);
         if (crystalAmount == 0)
         {
             DestroySelf();
