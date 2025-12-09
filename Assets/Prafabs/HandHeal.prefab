@@ -363,6 +363,7 @@ MonoBehaviour:
   damageText: {fileID: 0}
   isEnemy: 0
   animationSpeed: 10
+  crystalAnimDura: 0.5
   crystal: {fileID: 6937375598450179550, guid: e5d34f6d8ed626445b337435e8b15951, type: 3}
   crystalAmount: 1
   takeDamageSound: {fileID: 0}

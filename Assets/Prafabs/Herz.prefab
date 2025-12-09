@@ -625,8 +625,8 @@ GameObject:
   - component: {fileID: 8087694594754018774}
   - component: {fileID: 5770932227703948702}
   - component: {fileID: 3713926366852542312}
-  - component: {fileID: 6546474626349484173}
   - component: {fileID: 1001111757668306861}
+  - component: {fileID: 3120713623323017657}
   m_Layer: 0
   m_Name: Herz
   m_TagString: Untagged
@@ -684,6 +684,7 @@ MonoBehaviour:
   damageText: {fileID: 0}
   isEnemy: 0
   animationSpeed: 10
+  crystalAnimDura: 0.25
   crystal: {fileID: 0}
   crystalAmount: 0
   takeDamageSound: {fileID: 8300000, guid: d6244e44a4a2b4d81abe0b651d6160c2, type: 3}
@@ -739,20 +740,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.4064928, y: 1.9397196}
   m_EdgeRadius: 0
---- !u!114 &6546474626349484173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5229332580041227260}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca21f92c9d66ea141acd20d59b731f5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turns: 0
-  damagePerTurn: 1
 --- !u!114 &1001111757668306861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -766,6 +753,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turns: 0
+  effectIcon: {fileID: 0}
+--- !u!114 &3120713623323017657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5229332580041227260}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca21f92c9d66ea141acd20d59b731f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turns: 0
+  effectIcon: {fileID: 5895917688314377967, guid: d5fbb7449eb4745b0bae5761469c403d, type: 3}
+  damagePerTurn: 1
 --- !u!1 &5516794894148961535
 GameObject:
   m_ObjectHideFlags: 0
