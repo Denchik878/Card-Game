@@ -29,6 +29,7 @@ public abstract class Card : MonoBehaviour
 
     protected void Start()
     {
+        collider = GetComponent<Collider2D>();
         iconPositions = IconPositions();
         ChangeCrystalAmount(0);
         if (damageText != null)
@@ -40,7 +41,6 @@ public abstract class Card : MonoBehaviour
         {
             ChangeHealth(maxHealth);
         }
-        collider = GetComponent<Collider2D>();
     }
 
     public void ChangeHealth(int a)
@@ -180,12 +180,21 @@ public abstract class Card : MonoBehaviour
 
     public void AddEffectIcon(GameObject effect)
     {
-        var go = Instantiate(effect);
-        iconEffects.Add(go);
+        iconEffects.Add(effect);
         for (int i = 0; i < iconEffects.Count; i++)
         {
-            iconEffects[i].transform.position = iconPositions[i];
+            iconEffects[i].transform.localPosition = iconPositions[i];
         }
+    }
+
+    public void RemoveEffectIcon(GameObject effect)
+    {
+        iconEffects.Remove(effect);
+        for (int i = 0; i < iconEffects.Count; i++)
+        {
+            iconEffects[i].transform.localPosition = iconPositions[i];
+        }
+        Destroy(effect);
     }
 
     private Vector3[] IconPositions()
@@ -201,6 +210,6 @@ public abstract class Card : MonoBehaviour
                 positions[j + i*4] = new Vector3(width/2 - (j + 1)*gap, height/2 - gap, 0);
             }
         }
-        return null;
+        return positions;
     }
 }

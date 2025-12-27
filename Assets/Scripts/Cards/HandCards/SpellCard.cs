@@ -9,8 +9,11 @@ public class SpellCard : Weapon
             CancelAttack();
             return;
         }
-        enemyCard.GetComponent<PoisonEffect>().enabled = true;
-        enemyCard.GetComponent<PoisonEffect>().turns += 3;
+
+        var args = new EffectArgs();
+        args.damage = damage;
+        args.turnsDura = 3;
+        enemyCard.GetComponent<PoisonEffect>().AddEffect(args);
         await ChangeCrystalAmount(-1);
         player.FinishTurn();
         if (crystalAmount == 0)

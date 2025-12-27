@@ -1,33 +1,42 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class CardEffect : MonoBehaviour
 {
-    public int turns;
     protected Card baseCard;
+    protected List<EffectArgs> argsList = new();
     public GameObject effectIconPrefab;
-    private GameObject currentEffectIcon;
-
-    private void OnEnable()
+    public void AddEffect(EffectArgs args)
     {
         if (effectIconPrefab != null)
         {
-            currentEffectIcon = Instantiate(effectIconPrefab);
+            args.icon = Instantiate(effectIconPrefab, baseCard.transform);
+            
+            baseCard.AddEffectIcon(args.icon);
         }
     }
 
-    private void OnDisable()
+    public void RemoveEffect(EffectArgs args)
     {
-        if (currentEffectIcon != null)
+        if (args.icon != null)
         {
-            Destroy(currentEffectIcon);
+            baseCard.RemoveEffectIcon(args.icon);
         }
     }
-
+    
     private void Awake()
     {
         baseCard = GetComponent<Card>();
     }
 
     public abstract void TakeEffect();
+}
+
+public class EffectArgs
+{
+    public int damage;
+    public int turnsDura;
+    public int turnsDelay;
+    public GameObject icon;
 }
