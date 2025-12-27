@@ -588,13 +588,13 @@ MonoBehaviour:
   damageText: {fileID: 4088340151539335927}
   isEnemy: 1
   animationSpeed: 10
+  crystalAnimDura: 0.25
   crystal: {fileID: 6937375598450179550, guid: e5d34f6d8ed626445b337435e8b15951, type: 3}
   crystalAmount: 2
   takeDamageSound: {fileID: 0}
   healingSound: {fileID: 0}
   valutaErned: 2
   crystalsAddedByAbility: 2
-  progress: 0
   curve:
     serializedVersion: 2
     m_Curve:
@@ -646,7 +646,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  duration: 1
+  duration: 3
 --- !u!114 &6366690919364850281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -654,12 +654,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4088340150552258666}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca21f92c9d66ea141acd20d59b731f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turns: 0
+  effectIconPrefab: {fileID: 0}
   damagePerTurn: 2
 --- !u!114 &5315020813516829751
 MonoBehaviour:
@@ -668,12 +668,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4088340150552258666}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff36049b77d827540884bd376df19eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turns: 0
+  effectIconPrefab: {fileID: 0}
 --- !u!61 &5646131656662051689
 BoxCollider2D:
   m_ObjectHideFlags: 0

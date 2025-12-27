@@ -7,6 +7,10 @@ public abstract class CardEffect : MonoBehaviour
     protected Card baseCard;
     protected List<EffectArgs> argsList = new();
     public GameObject effectIconPrefab;
+    private void Awake()
+    {
+        baseCard = GetComponent<Card>();
+    }
     public void AddEffect(EffectArgs args)
     {
         if (effectIconPrefab != null)
@@ -14,6 +18,7 @@ public abstract class CardEffect : MonoBehaviour
             args.icon = Instantiate(effectIconPrefab, baseCard.transform);
             
             baseCard.AddEffectIcon(args.icon);
+            argsList.Add(args);
         }
     }
 
@@ -23,11 +28,6 @@ public abstract class CardEffect : MonoBehaviour
         {
             baseCard.RemoveEffectIcon(args.icon);
         }
-    }
-    
-    private void Awake()
-    {
-        baseCard = GetComponent<Card>();
     }
 
     public abstract void TakeEffect();

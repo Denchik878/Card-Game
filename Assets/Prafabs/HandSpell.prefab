@@ -505,6 +505,7 @@ MonoBehaviour:
   dragPrefab: {fileID: 8120054307815012329, guid: e3d9be1a8b1fbeb4ea4a023ad0edce3f, type: 3}
   grabClip: {fileID: 8300000, guid: 887d4be082fed4d039af4b2e71f4d285, type: 3}
   strikeClip: {fileID: 0}
+  duration: 3
 --- !u!61 &4599794410595121412
 BoxCollider2D:
   m_ObjectHideFlags: 0

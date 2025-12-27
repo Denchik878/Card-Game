@@ -4,16 +4,19 @@ using UnityEngine;
 public class PoisonEffect : CardEffect
 {
     public int damagePerTurn;
-
+    
 
     public override void TakeEffect()
     {
-        /*if(turns == 0)
+        foreach (var effect in argsList)
         {
-            this.enabled = false;
-            return;
+            if (effect.turnsDura == 0)
+            {
+                RemoveEffect(effect);
+                return;
+            }
+            baseCard.ChangeHealth(-effect.damage);
+            effect.turnsDura--;
         }
-        baseCard.ChangeHealth(-damagePerTurn);
-        turns--;*/
     }
 }
