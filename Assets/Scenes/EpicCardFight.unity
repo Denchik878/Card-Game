@@ -980,7 +980,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7768496005020217441, guid: 3aa4e4f452d2b2946a196943c4af51af, type: 3}
   m_PrefabInstance: {fileID: 3592860707535461342}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3592860707535461343}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82894e5dcd7ad413d9b7220817afee19, type: 3}
@@ -1049,7 +1049,7 @@ MonoBehaviour:
   - card: {fileID: 2705947517820227152, guid: 70c10b676851341dc99be32084728c69, type: 3}
     weight: 30
   - card: {fileID: 260036605393626478, guid: c3ae657fdb37bed49bb78422d564ca06, type: 3}
-    weight: 70
+    weight: 400
   - card: {fileID: 8563109665988169774, guid: cb8a40c6b78bada4fa5680709e0c787e, type: 3}
     weight: 40
   - card: {fileID: 2705947517820227152, guid: cbe27ba195df3428b84c336f00aff83d, type: 3}
@@ -5154,6 +5154,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 5516465403901890148, guid: 3aa4e4f452d2b2946a196943c4af51af, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5639768795309584125, guid: 3aa4e4f452d2b2946a196943c4af51af, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5639768795309584125, guid: 3aa4e4f452d2b2946a196943c4af51af, type: 3}
       propertyPath: effectIcon
       value: 
@@ -5166,10 +5174,31 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3592860708536601863, guid: 3aa4e4f452d2b2946a196943c4af51af, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3592860707535461344}
     - targetCorrespondingSourceObject: {fileID: 3592860708352182953, guid: 3aa4e4f452d2b2946a196943c4af51af, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 3aa4e4f452d2b2946a196943c4af51af, type: 3}
+--- !u!1 &3592860707535461343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3592860708536601863, guid: 3aa4e4f452d2b2946a196943c4af51af, type: 3}
+  m_PrefabInstance: {fileID: 3592860707535461342}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3592860707535461344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3592860707535461343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6707d3abe8fd419a830d89bff7fc556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectIconPrefab: {fileID: 8982082251928775105, guid: c89da8639bd5143baad50154f57dcbdf, type: 3}
 --- !u!1001 &8299059169284106085
 PrefabInstance:
   m_ObjectHideFlags: 0

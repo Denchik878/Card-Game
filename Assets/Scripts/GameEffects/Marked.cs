@@ -1,21 +1,17 @@
-using System;
 using UnityEngine;
 
-public class PoisonEffect : CardEffect
+public class Marked : CardEffect
 {
-    public int damagePerTurn;
-    
-
     public override void TakeEffect()
     {
         foreach (var effect in argsList)
         {
             if (effect.turnsDura == 0)
             {
+                baseCard.ChangeHealth(-effect.damage);
                 RemoveEffect(effect);
                 continue;
             }
-            baseCard.ChangeHealth(-effect.damage);
             effect.turnsDura--;
         }
     }
