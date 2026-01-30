@@ -1049,7 +1049,7 @@ MonoBehaviour:
   - card: {fileID: 2705947517820227152, guid: 70c10b676851341dc99be32084728c69, type: 3}
     weight: 30
   - card: {fileID: 260036605393626478, guid: c3ae657fdb37bed49bb78422d564ca06, type: 3}
-    weight: 400
+    weight: 65
   - card: {fileID: 8563109665988169774, guid: cb8a40c6b78bada4fa5680709e0c787e, type: 3}
     weight: 40
   - card: {fileID: 2705947517820227152, guid: cbe27ba195df3428b84c336f00aff83d, type: 3}
@@ -1104,7 +1104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 3
   index: 1
-  currentCard: {fileID: 244655551}
+  currentCard: {fileID: 0}
 --- !u!1 &446388653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1760,7 +1760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 3
   index: 3
-  currentCard: {fileID: 1570718115}
+  currentCard: {fileID: 0}
 --- !u!1 &880399957
 GameObject:
   m_ObjectHideFlags: 0
@@ -4614,7 +4614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 3
   index: 2
-  currentCard: {fileID: 231137013}
+  currentCard: {fileID: 0}
 --- !u!1 &2019576142
 GameObject:
   m_ObjectHideFlags: 0

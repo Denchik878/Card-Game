@@ -626,7 +626,8 @@ GameObject:
   - component: {fileID: 5770932227703948702}
   - component: {fileID: 3713926366852542312}
   - component: {fileID: 1001111757668306861}
-  - component: {fileID: 3120713623323017657}
+  - component: {fileID: -6578231551658687609}
+  - component: {fileID: 2550550855133806331}
   m_Layer: 0
   m_Name: Herz
   m_TagString: Untagged
@@ -747,28 +748,38 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5229332580041227260}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff36049b77d827540884bd376df19eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turns: 0
-  effectIcon: {fileID: 0}
---- !u!114 &3120713623323017657
+  effectIconPrefab: {fileID: 0}
+--- !u!114 &-6578231551658687609
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5229332580041227260}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca21f92c9d66ea141acd20d59b731f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turns: 0
-  effectIcon: {fileID: 5895917688314377967, guid: d5fbb7449eb4745b0bae5761469c403d, type: 3}
-  damagePerTurn: 1
+  effectIconPrefab: {fileID: 5895917688314377967, guid: d5fbb7449eb4745b0bae5761469c403d, type: 3}
+--- !u!114 &2550550855133806331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5229332580041227260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6707d3abe8fd419a830d89bff7fc556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectIconPrefab: {fileID: 8982082251928775105, guid: c89da8639bd5143baad50154f57dcbdf, type: 3}
 --- !u!1 &5516794894148961535
 GameObject:
   m_ObjectHideFlags: 0

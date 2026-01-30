@@ -536,9 +536,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4088340150552258665}
   - component: {fileID: 4088340150552258671}
-  - component: {fileID: 6366690919364850281}
   - component: {fileID: 5315020813516829751}
   - component: {fileID: 5646131656662051689}
+  - component: {fileID: 8389294596223051257}
+  - component: {fileID: 3397996514116332810}
   m_Layer: 0
   m_Name: Green Crystal
   m_TagString: Untagged
@@ -647,20 +648,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   duration: 1
---- !u!114 &6366690919364850281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4088340150552258666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca21f92c9d66ea141acd20d59b731f5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effectIconPrefab: {fileID: 0}
-  damagePerTurn: 2
 --- !u!114 &5315020813516829751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -720,6 +707,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.4018798, y: 1.8781817}
   m_EdgeRadius: 0
+--- !u!114 &8389294596223051257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4088340150552258666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6707d3abe8fd419a830d89bff7fc556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectIconPrefab: {fileID: 8982082251928775105, guid: c89da8639bd5143baad50154f57dcbdf, type: 3}
+--- !u!114 &3397996514116332810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4088340150552258666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca21f92c9d66ea141acd20d59b731f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectIconPrefab: {fileID: 5895917688314377967, guid: d5fbb7449eb4745b0bae5761469c403d, type: 3}
 --- !u!1 &4088340151136586459
 GameObject:
   m_ObjectHideFlags: 0

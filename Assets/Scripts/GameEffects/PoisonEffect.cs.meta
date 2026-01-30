@@ -4,7 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - effectIcon: {fileID: 5895917688314377967, guid: d5fbb7449eb4745b0bae5761469c403d, type: 3}
+  - effectIconPrefab: {fileID: 5895917688314377967, guid: d5fbb7449eb4745b0bae5761469c403d, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

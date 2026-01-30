@@ -448,9 +448,10 @@ GameObject:
   - component: {fileID: 4088340150552258665}
   - component: {fileID: 4088340150552258671}
   - component: {fileID: 2127790623056871273}
-  - component: {fileID: 6153317041436376221}
   - component: {fileID: -8864280980585763318}
   - component: {fileID: 5646131656662051689}
+  - component: {fileID: -8915211220106136101}
+  - component: {fileID: 5735178528684082416}
   m_Layer: 0
   m_Name: Purple Crystal
   m_TagString: Untagged
@@ -500,13 +501,13 @@ MonoBehaviour:
   damageText: {fileID: 0}
   isEnemy: 1
   animationSpeed: 10
+  crystalAnimDura: 0.25
   crystal: {fileID: 1547253757824930823, guid: 1426f8b82a1506d47a54f50d238a0bf5, type: 3}
   crystalAmount: 9
   takeDamageSound: {fileID: 0}
   healingSound: {fileID: 0}
   valutaErned: 5
   crystalsAddedByAbility: 5
-  progress: 0
   curve:
     serializedVersion: 2
     m_Curve:
@@ -571,23 +572,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75dc520bae9034424ba664175daf2a47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turns: 0
+  effectIconPrefab: {fileID: 0}
   healingPerTurn: 1
   boss: {fileID: 0}
---- !u!114 &6153317041436376221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4088340150552258666}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca21f92c9d66ea141acd20d59b731f5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turns: 0
-  damagePerTurn: 2
 --- !u!114 &-8864280980585763318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -600,7 +587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff36049b77d827540884bd376df19eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turns: 0
+  effectIconPrefab: {fileID: 0}
 --- !u!61 &5646131656662051689
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -647,6 +634,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.4018798, y: 1.8781817}
   m_EdgeRadius: 0
+--- !u!114 &-8915211220106136101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4088340150552258666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6707d3abe8fd419a830d89bff7fc556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectIconPrefab: {fileID: 8982082251928775105, guid: c89da8639bd5143baad50154f57dcbdf, type: 3}
+--- !u!114 &5735178528684082416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4088340150552258666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca21f92c9d66ea141acd20d59b731f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectIconPrefab: {fileID: 5895917688314377967, guid: d5fbb7449eb4745b0bae5761469c403d, type: 3}
 --- !u!1 &4088340151136586459
 GameObject:
   m_ObjectHideFlags: 0

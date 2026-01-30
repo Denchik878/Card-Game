@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class Marked : CardEffect
@@ -6,13 +7,12 @@ public class Marked : CardEffect
     {
         foreach (var effect in argsList)
         {
-            if (effect.turnsDura == 0)
+            if (effect.turnsDelay == 1)
             {
                 baseCard.ChangeHealth(-effect.damage);
-                RemoveEffect(effect);
-                continue;
             }
-            effect.turnsDura--;
+            effect.turnsDelay--;
         }
+        argsList.Where(x => x.turnsDelay == 0).ToList().ForEach(RemoveEffect);
     }
 }

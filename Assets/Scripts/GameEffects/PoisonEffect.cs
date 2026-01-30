@@ -1,22 +1,16 @@
 using System;
+using System.Linq;
 using UnityEngine;
 
 public class PoisonEffect : CardEffect
 {
-    public int damagePerTurn;
-    
-
     public override void TakeEffect()
     {
         foreach (var effect in argsList)
         {
-            if (effect.turnsDura == 0)
-            {
-                RemoveEffect(effect);
-                continue;
-            }
             baseCard.ChangeHealth(-effect.damage);
             effect.turnsDura--;
         }
+        argsList.Where(x => x.turnsDura == 0).ToList().ForEach(RemoveEffect);
     }
 }
