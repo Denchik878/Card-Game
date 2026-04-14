@@ -14,12 +14,13 @@ public class GameManager : MonoBehaviour
     public event Action OnStateChanged;
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
-        if(Instance != null)
+        if (Instance != null)
         {
             Destroy(gameObject);
+            return;
         }
         Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     public void ChangeState(GameState newState)

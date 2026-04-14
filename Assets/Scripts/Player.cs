@@ -13,11 +13,6 @@ public class Player : MonoBehaviour
     private void Start()
     {
         points = GetComponentsInChildren<Point>();
-        foreach (Card card in activeCards)
-        {
-            card.OnDeath += DisposeCard;
-        }
-
         herz = activeCards.OfType<HerzCard>().FirstOrDefault();
         herz.OnDeath += GameOver;
     }

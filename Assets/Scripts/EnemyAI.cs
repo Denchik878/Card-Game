@@ -15,10 +15,6 @@ public class EnemyAI : MonoBehaviour
 
     private void Start()
     {
-        foreach (Card card in activeCards)
-        {
-            card.OnDeath += DisposeCard;
-        }
         boss = activeCards.OfType<BossCard>().FirstOrDefault();
         boss.OnDeath += EnemyLoose;
     }
