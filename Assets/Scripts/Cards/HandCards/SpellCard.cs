@@ -14,7 +14,7 @@ public class SpellCard : Weapon
         var args = new EffectArgs();
         args.damage = damage;
         args.turnsDura = poisonDuration;
-        enemyCard.GetComponent<PoisonEffect>().AddEffect(args);
+        enemyCard.GetComponent<Poison>().AddEffect(args);
         await ChangeCrystalAmount(-1);
         player.FinishTurn();
         if (crystalAmount == 0)

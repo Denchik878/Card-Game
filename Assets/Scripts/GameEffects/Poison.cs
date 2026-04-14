@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 
-public class PoisonEffect : CardEffect
+public class Poison : CardEffect
 {
     public override void TakeEffect()
     {

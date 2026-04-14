@@ -15,6 +15,7 @@ public abstract class Card : MonoBehaviour
     private CardEffect[] effects;
     private List<GameObject> iconEffects = new();
     public event Action<Card> OnDeath;
+    public event Action<int> OnDamageTaken;
     public float animationSpeed = 1;
     public float crystalAnimDura = 0.25f;
     public GameObject crystal;
@@ -46,6 +47,7 @@ public abstract class Card : MonoBehaviour
     public void ChangeHealth(int a)
     {
         currentHealth += a;
+        OnDamageTaken?.Invoke(a);
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;

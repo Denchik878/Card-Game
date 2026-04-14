@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HealEffect : CardEffect
+public class Heal : CardEffect
 {
     public int healingPerTurn;
     public BossCard boss;
